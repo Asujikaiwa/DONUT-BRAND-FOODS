@@ -1,28 +1,43 @@
-// src/components/Hero.tsx (แก้ใหม่)
 import React, { useState, useRef, useEffect } from 'react';
 import { Translation, HeroSlide } from '../types';
 import { ChevronDown, ChevronRight, ChevronLeft } from 'lucide-react';
+import { db } from '../firebase'; // Import Database
+import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 
 interface HeroProps {
   t: Translation['hero'];
   scrollToSection: (id: string) => void;
-  slides: HeroSlide[]; // รับข้อมูลสไลด์เข้ามา
+  // ลบ slides ออกจาก props เพราะเราจะดึงเอง
 }
 
-const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
+const Hero: React.FC<HeroProps> = ({ t, scrollToSection }) => {
+  const [slides, setSlides] = useState<HeroSlide[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // ฟังก์ชันเปลี่ยนไปคลิปถัดไป
+  // --- ดึงข้อมูลวิดีโอจาก Firebase ---
+  useEffect(() => {
+    const q = query(collection(db, 'hero_slides'), orderBy('createdAt', 'desc')); // เรียงจากใหม่ไปเก่า
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const loadedSlides = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as HeroSlide[];
+      setSlides(loadedSlides);
+    });
+    return () => unsubscribe();
+  }, []);
+
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length); // ถ้าถึงตัวสุดท้ายจะวนกลับไป 0
+    if (slides.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
   };
 
   const handlePrev = () => {
+    if (slides.length === 0) return;
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // เมื่อ currentIndex เปลี่ยน ให้สั่งเล่นวิดีโอใหม่ทันที (เผื่อ browser ไม่ auto play)
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
@@ -30,8 +45,14 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
     }
   }, [currentIndex]);
 
-  // ถ้าไม่มีวิดีโอเลย ให้แสดงพื้นหลังดำ
-  if (slides.length === 0) return <div className="h-screen bg-black" />;
+  // ถ้ายังไม่มีวิดีโอ ให้แสดงพื้นหลังดำรอ
+  if (slides.length === 0) {
+    return (
+      <section id="home" className="relative h-screen w-full bg-black flex items-center justify-center">
+         <div className="text-white text-opacity-50">Loading Video...</div>
+      </section>
+    );
+  }
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
@@ -39,17 +60,17 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
       <div className="absolute inset-0 w-full h-full">
          <video 
             ref={videoRef}
-            key={slides[currentIndex].id} // key สำคัญ! เปลี่ยน key เพื่อให้ React รู้ว่าเป็นคนละวิดีโอ
+            key={slides[currentIndex].id}
             autoPlay 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-60" // ปรับความสว่างวิดีโอลงหน่อยเพื่อให้ตัวหนังสือเด่น
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
             src={slides[currentIndex].url} 
-            onEnded={handleNext} // *** สำคัญ: จบแล้วไปคลิปต่อไป ***
+            onEnded={handleNext}
           />
       </div>
 
-      {/* ปุ่มกดเลื่อนเอง (Optional) */}
+      {/* Controls */}
       {slides.length > 1 && (
         <>
           <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition">
@@ -61,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
         </>
       )}
 
-      {/* Dots Indicator (จุดบอกตำแหน่ง) */}
+      {/* Dots */}
       <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
         {slides.map((_, idx) => (
           <div 
@@ -71,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
         ))}
       </div>
 
-      {/* Content Overlay (คงเดิม) */}
+      {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg font-display">
           {t.title}
@@ -87,7 +108,6 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection, slides }) => {
         </button>
       </div>
 
-      {/* Scroll Down Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer" onClick={() => scrollToSection('about')}>
         <ChevronDown size={48} className="text-white drop-shadow-lg" />
       </div>
