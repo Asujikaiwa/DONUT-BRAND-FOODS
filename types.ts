@@ -8,6 +8,13 @@ export interface Product {
     en: string;
     cn: string;
   };
+
+  description?: {
+    th: string;
+    en: string;
+    cn: string;
+  };
+
   weight: string;
   price: number; 
   image: string; // URL to the image
@@ -43,4 +50,9 @@ export interface Translation {
     emailLabel: string;
     followUs: string;
   };
+}
+export interface HeroSlide {
+  id: string;
+  url: string; // เก็บ URL ของวิดีโอ
+  type: 'video'; // เผื่ออนาคตอยากใส่ 'image'
 }
