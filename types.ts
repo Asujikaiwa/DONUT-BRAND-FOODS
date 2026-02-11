@@ -9,6 +9,7 @@ export interface Product {
     cn: string;
   };
   weight: string;
+  price: number; 
   image: string; // URL to the image
   isNew?: boolean;
 }
