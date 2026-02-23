@@ -1,5 +1,10 @@
 export type Language = 'th' | 'en' | 'cn';
 
+export interface ProductVariant {
+  weight: string;
+  price: number;
+}
+
 export interface Product {
   id: string;
   category: string;
@@ -17,6 +22,11 @@ export interface Product {
 
   weight: string;
   price: number; 
+
+  // ของใหม่ที่เพิ่มเข้ามา
+  variants?: ProductVariant[]; // เก็บหลายขนาดหลายราคา
+  isBestSeller?: boolean;      // เช็คว่าเป็นสินค้าขายดีไหม
+
   image: string; // URL to the image
   isNew?: boolean;
 }
