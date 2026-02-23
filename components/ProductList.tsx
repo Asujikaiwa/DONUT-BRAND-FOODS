@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Translation, Product, Language } from '../types';
 import { db } from '../firebase'; // Import Database
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { PRODUCTS } from '@/constants';
 
 interface ProductListProps {
   t: Translation['products'];

@@ -98,108 +98,47 @@ export const TRANSLATIONS: Record<Language, Translation> = {
 // In a real deployment, replace these URLs with the actual image paths.
 
 export const PRODUCTS: Product[] = [
-  // Seasoning Powders (ผงปรุงรส)
-  {
-    id: 's1',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสวิงซ์แซ่บ', en: 'Wing Zab Seasoning', cn: '香辣鸡翅调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80&w=800',
-    isNew: true
-  },
-  {
-    id: 's2',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสชีส', en: 'Cheese Seasoning', cn: '芝士调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 's3',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสปาปริก้า', en: 'Paprika Seasoning', cn: '红椒调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1621360841013-c76837cae9e4?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 's4',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสบาร์บีคิว', en: 'BBQ Seasoning', cn: '烧烤调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 's5',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสต้มยำ', en: 'Tom Yum Seasoning', cn: '冬阴功调料' },
-    weight: '500g / 200g',
-    image: 'https://images.unsplash.com/photo-1548943487-a2e4e43b485c?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 's6',
-    category: 'seasoning',
-    name: { th: 'ผงปรุงรสไข่เค็ม', en: 'Salted Egg Seasoning', cn: '咸蛋黄调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 's7',
-    category: 'seasoning',
-    name: { th: 'ผงซาวครีมและหัวหอม', en: 'Sour Cream & Onion', cn: '酸奶油洋葱调料' },
-    weight: '500g / 200g / 100g',
-    image: 'https://images.unsplash.com/photo-1623653387945-2fd25214f8fc?auto=format&fit=crop&q=80&w=800'
-  },
-  
-  // Beverage Powders (เครื่องดื่ม)
-  {
-    id: 'b1',
-    category: 'beverage',
-    name: { th: 'ชานมไข่มุก', en: 'Bubble Tea Powder', cn: '珍珠奶茶粉' },
-    weight: '200g',
-    image: 'https://images.unsplash.com/photo-1594489815967-0c1a938c47b1?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'b2',
-    category: 'beverage',
-    name: { th: 'ผงโกโก้ 100%', en: 'Cocoa Powder 100%', cn: '可可粉' },
-    weight: '120g',
-    image: 'https://images.unsplash.com/photo-1546464522-d8d17b8f9722?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'b3',
-    category: 'beverage',
-    name: { th: 'ชาเขียวมัทฉะ', en: 'Matcha Green Tea', cn: '抹茶粉' },
-    weight: '200g',
-    image: 'https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'b4',
-    category: 'beverage',
-    name: { th: 'นมเย็น', en: 'Pink Milk (Nom Yen)', cn: '粉红奶' },
-    weight: '200g',
-    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'b5',
-    category: 'beverage',
-    name: { th: 'เผือกหอม', en: 'Taro Powder', cn: '香芋粉' },
-    weight: '200g',
-    image: 'https://images.unsplash.com/photo-1546816086-6411979d554a?auto=format&fit=crop&q=80&w=800'
-  },
+  // ==========================================
+  // หมวดหมู่: ผงปรุงรส (Seasoning)
+  // ==========================================
+  { id: 's1', category: 'seasoning', name: { th: 'ผงปรุงรสบาร์บีคิว', en: 'BBQ Seasoning', cn: '烧烤调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/BBQ500G.jpeg' },
+  { id: 's2', category: 'seasoning', name: { th: 'ผงปรุงรสชีส', en: 'Cheese Seasoning', cn: '芝士调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Cheese500G.jpeg' },
+  { id: 's3', category: 'seasoning', name: { th: 'ผงปรุงรสชีส (สูตร S)', en: 'Cheese Seasoning (S)', cn: '芝士调料 (S)' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/CheeseS500G.jpeg' },
+  { id: 's4', category: 'seasoning', name: { th: 'ผงปรุงรสพริกชีส', en: 'Chilli Cheese Seasoning', cn: '辣椒芝士调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/ChilliCheese500G.jpeg' },
+  { id: 's5', category: 'seasoning', name: { th: 'ผงปรุงรสข้าวโพด', en: 'Corn Seasoning', cn: '玉米调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Corn500G.jpeg' },
+  { id: 's6', category: 'seasoning', name: { th: 'ผงปรุงรสกุ้งย่าง', en: 'Grilled Shrimp Seasoning', cn: '烤虾调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/GrillShrimp500G.jpeg' },
+  { id: 's7', category: 'seasoning', name: { th: 'ผงปรุงรสปลาหมึกย่าง', en: 'Grilled Squid Seasoning', cn: '烤鱿鱼调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/GrilledSquid500G.jpeg' },
+  { id: 's8', category: 'seasoning', name: { th: 'ผงฮอทแอนด์สไปซี่', en: 'Hot & Spicy Seasoning', cn: '香辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Hot&spicy500G.jpeg' },
+  { id: 's9', category: 'seasoning', name: { th: 'ผงปรุงรสลาบ', en: 'Larb Seasoning', cn: '泰式凉拌调料' }, weight: '100g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Larb500G.jpeg' },
+  { id: 's10', category: 'seasoning', name: { th: 'ผงปรุงรสมีตตี้ชีส', en: 'Meaty Cheese Seasoning', cn: '肉香芝士调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/MeatyCheese500G.jpeg' },
+  { id: 's11', category: 'seasoning', name: { th: 'ผงปรุงรสหม่าล่า', en: 'Mhala Seasoning', cn: '麻辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Mhala500G.jpeg' },
+  { id: 's12', category: 'seasoning', name: { th: 'ผงปรุงรสชีสนม', en: 'Milk Cheese Seasoning', cn: '牛奶芝士调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/MilkCheese500G.jpeg' },
+  { id: 's13', category: 'seasoning', name: { th: 'ผงปรุงรสปาปริก้า', en: 'Paprika Seasoning', cn: '红椒调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Paprika500G.jpeg' },
+  { id: 's14', category: 'seasoning', name: { th: 'ผงปรุงรสพิซซ่า', en: 'Pizza Seasoning', cn: '披萨调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Pizza500G.jpeg' },
+  { id: 's15', category: 'seasoning', name: { th: 'ผงปรุงรสไข่เค็ม', en: 'Salted Egg Seasoning', cn: '咸蛋黄调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/SaltedEgg500G.jpeg' },
+  { id: 's16', category: 'seasoning', name: { th: 'ผงปรุงรสสาหร่าย', en: 'Seaweed Seasoning', cn: '海苔调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Seaweed500G.jpeg' },
+  { id: 's17', category: 'seasoning', name: { th: 'ผงซาวครีมและหัวหอม', en: 'Sour Cream & Onion', cn: '酸奶油洋葱' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/SourCreamAndOnion500G.jpeg' },
+  { id: 's18', category: 'seasoning', name: { th: 'ผงซีฟู้ดสไปซี่', en: 'Spicy Seafood Seasoning', cn: '香辣海鲜调料' }, weight: '50g / 100g / 200g', price: 0, image: '/PictureProduct/FoodPowder/SpicySeafood200G.jpeg' },
+  { id: 's19', category: 'seasoning', name: { th: 'ผงปรุงรสต้มยำ', en: 'Tom Yum Seasoning', cn: '冬阴功调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/TomYum500G.jpeg' },
+  { id: 's20', category: 'seasoning', name: { th: 'ผงปรุงรสวิงซ์แซ่บ', en: 'Wing Zab Seasoning', cn: '香辣鸡翅调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/WingZab500G.jpeg', isNew: true },
+  { id: 's21', category: 'seasoning', name: { th: 'ผงปรุงรสแซ่บซี๊ด', en: 'Zab Zeed Seasoning', cn: '极辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/ZabZeed500G.jpeg' },
 
-  // Additives (วัตถุดิบ)
-  {
-    id: 'a1',
-    category: 'additives',
-    name: { th: 'กรดมะนาว (Citric Acid)', en: 'Citric Acid', cn: '柠檬酸' },
-    weight: '1000g / 500g',
-    image: 'https://images.unsplash.com/photo-1616428753232-47535b9148d0?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'a2',
-    category: 'additives',
-    name: { th: 'แป้งหวาน', en: 'Sweetener Powder', cn: '甜味粉' },
-    weight: '500g',
-    image: 'https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?auto=format&fit=crop&q=80&w=800'
-  }
+  // ==========================================
+  // หมวดหมู่: เครื่องดื่ม (Beverage)
+  // ==========================================
+  { id: 'b1', category: 'beverage', name: { th: 'ผงชานมไข่มุก', en: 'Bubble Tea Powder', cn: '珍珠奶茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/BubbleTea200G.jpeg' },
+  { id: 'b2', category: 'beverage', name: { th: 'ผงแคนตาลูป', en: 'Cantaloupe Powder', cn: '哈密瓜粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Cantaloupe200G.jpeg' },
+  { id: 'b3', category: 'beverage', name: { th: 'ผงช็อกโกแลต', en: 'Chocolate Powder', cn: '巧克力粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Chocolate200G.jpeg' },
+  { id: 'b4', category: 'beverage', name: { th: 'ผงโกโก้', en: 'Cocoa Powder', cn: '可可粉' }, weight: '120g', price: 0, image: '/PictureProduct/WaterPowder/Cocoa120G.jpeg' },
+  { id: 'b5', category: 'beverage', name: { th: 'ผงมะพร้าว', en: 'Coconut Powder', cn: '椰子粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Coconut200G.jpeg' },
+  { id: 'b6', category: 'beverage', name: { th: 'ผงชาเขียวมัทฉะ', en: 'Matcha Green Tea', cn: '抹茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg' },
+  { id: 'b7', category: 'beverage', name: { th: 'นมผง', en: 'Milk Powder', cn: '奶粉' }, weight: '200g / 1000g', price: 0, image: '/PictureProduct/WaterPowder/Milk1000G.jpeg' },
+  { id: 'b8', category: 'beverage', name: { th: 'ผงนมเย็น', en: 'Pink Milk (Nom Yen)', cn: '粉红奶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Nomyen200G.png' },
+  { id: 'b9', category: 'beverage', name: { th: 'ผงเผือกหอม', en: 'Taro Powder', cn: '香芋粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/TaroBubble200G.jpeg' },
+  { id: 'b10', category: 'beverage', name: { th: 'ผงชาไทย', en: 'Thai Tea Powder', cn: '泰式茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/ThaiTea200G.jpeg' },
+
+  // ==========================================
+  // หมวดหมู่: วัตถุดิบ/สารเสริม (Additives)
+  // ==========================================
+  { id: 'a1', category: 'additives', name: { th: 'กรดมะนาว (Citric Acid)', en: 'Citric Acid', cn: '柠檬酸' }, weight: '500g / 1000g', price: 0, image: '/PictureProduct/Other/CitricAcid1000G.jpeg' }
 ];
