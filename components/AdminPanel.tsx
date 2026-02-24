@@ -33,7 +33,10 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string>('');
+  
+  // State สำหรับ Video
   const [newVideoUrl, setNewVideoUrl] = useState('');
+  const [selectedVideoFile, setSelectedVideoFile] = useState<File | null>(null);
 
   const initialFormState: Partial<Product & { isHidden?: boolean }> = {
     category: 'seasoning',
@@ -94,6 +97,13 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
 
   const uploadImageToStorage = async (file: File, folder: string = 'products'):Promise<string> => {
     const storageRef = ref(storage, `${folder}/${Date.now()}_${file.name}`);
+    await uploadBytes(storageRef, file);
+    return await getDownloadURL(storageRef);
+  };
+
+  // อัปโหลดวิดีโอ
+  const uploadVideoToStorage = async (file: File): Promise<string> => {
+    const storageRef = ref(storage, `hero_videos/${Date.now()}_${file.name}`);
     await uploadBytes(storageRef, file);
     return await getDownloadURL(storageRef);
   };
@@ -192,13 +202,28 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
   };
 
   const handleAddVideo = async () => {
-    if (!newVideoUrl) return;
+    if (!newVideoUrl && !selectedVideoFile) return alert('กรุณาใส่ URL วิดีโอ หรืออัปโหลดไฟล์วิดีโอจากเครื่อง');
     setLoading(true);
     try {
-      await addDoc(collection(db, 'hero_slides'), { url: newVideoUrl, type: 'video', createdAt: new Date() });
+      let finalUrl = newVideoUrl;
+      // ถ้ามีการเลือกไฟล์วิดีโอจากเครื่อง ให้อัปโหลดขึ้น Storage ก่อน
+      if (selectedVideoFile) {
+        finalUrl = await uploadVideoToStorage(selectedVideoFile);
+      }
+      
+      await addDoc(collection(db, 'hero_slides'), { url: finalUrl, type: 'video', createdAt: new Date() });
+      
+      // ล้างค่าฟอร์ม
       setNewVideoUrl('');
+      setSelectedVideoFile(null);
+      const fileInput = document.getElementById('videoFileInput') as HTMLInputElement;
+      if (fileInput) fileInput.value = '';
+      
       alert('เพิ่มวิดีโอสำเร็จ!');
-    } catch (error) { alert('เกิดข้อผิดพลาด'); }
+    } catch (error) { 
+      console.error(error);
+      alert('เกิดข้อผิดพลาดในการอัปโหลดวิดีโอ'); 
+    }
     setLoading(false);
   };
 
@@ -491,12 +516,45 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
           {activeTab === 'hero' && (
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2"><PlayCircle className="text-brand-orange" /> เพิ่มวิดีโอ</h3>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input type="text" placeholder="URL วิดีโอ" className={inputStyle} value={newVideoUrl} onChange={(e) => setNewVideoUrl(e.target.value)} />
-                  <button onClick={handleAddVideo} className="bg-brand-orange text-white px-8 py-2.5 rounded-xl font-bold hover:bg-orange-600 shadow-md">เพิ่มวิดีโอ</button>
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2"><PlayCircle className="text-brand-orange" /> เพิ่มวิดีโอหน้าแรก</h3>
+                
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 items-center">
+                    <input 
+                      type="text" 
+                      placeholder="วาง URL วิดีโอ (ถ้ามี)" 
+                      className={`${inputStyle} w-full`} 
+                      value={newVideoUrl} 
+                      onChange={(e) => setNewVideoUrl(e.target.value)} 
+                      disabled={!!selectedVideoFile}
+                    />
+                    
+                    <span className="font-bold text-gray-500">หรือ</span>
+                    
+                    <input 
+                      id="videoFileInput" 
+                      type="file" 
+                      accept="video/mp4,video/webm" 
+                      onChange={(e) => {
+                        setSelectedVideoFile(e.target.files?.[0] || null);
+                        if (e.target.files?.[0]) setNewVideoUrl(''); // เคลียร์ URL ถ้าเลือกไฟล์
+                      }} 
+                      className={`${inputStyle} w-full bg-white`} 
+                      disabled={!!newVideoUrl}
+                    />
+                  </div>
+
+                  <button 
+                    onClick={handleAddVideo} 
+                    disabled={loading || (!newVideoUrl && !selectedVideoFile)} 
+                    className="bg-brand-orange text-white px-8 py-3 rounded-xl font-bold hover:bg-orange-600 shadow-md w-full sm:w-auto self-end flex justify-center items-center transition disabled:opacity-50"
+                  >
+                    {loading ? <Loader2 className="animate-spin mr-2" /> : <Plus className="mr-2" size={20} />} 
+                    {loading ? 'กำลังอัปโหลด...' : 'เพิ่มวิดีโอเข้าสู่ระบบ'}
+                  </button>
                 </div>
               </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {slides.map((slide) => (
                   <div key={slide.id} className="relative group bg-gray-900 rounded-2xl overflow-hidden aspect-video shadow-lg">
