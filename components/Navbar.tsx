@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Language, Translation } from '../types';
-import { Menu, X, Facebook, Instagram, Mail, Globe } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Mail, Globe, Phone } from 'lucide-react';
 
 interface NavbarProps {
   currentLang: Language;
@@ -62,26 +62,29 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* Logo */}
+          {/* Logo แบบผสมรูปภาพและข้อความ */}
           <div 
-            className="flex-shrink-0 cursor-pointer flex items-center gap-2" 
+            className="flex-shrink-0 cursor-pointer flex items-center gap-3" 
             onClick={() => handleNavClick('home')}
           >
-            {/* โลโก้แบรนด์ (ถ้ามีรูปภาพสามารถใส่แท็ก <img src="/logo.jpg" /> แทนข้อความได้) */}
-            <span className="text-2xl font-bold font-display text-brand-orange">
+            {/* รูปโลโก้ */}
+            <img src="/PictureProduct/Other/Logo/logo.jpg" alt="Donut Brand Logo" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover border-2 border-brand-orange/20" />
+            
+            {/* ข้อความโลโก้ */}
+            <span className="text-xl sm:text-2xl font-bold font-display text-brand-orange whitespace-nowrap">
               DONUT <span className="text-brand-dark">BRAND</span>
             </span>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {/* Main Links */}
-            <div className="flex space-x-6">
+            <div className="flex space-x-4 lg:space-x-6">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
-                  className="text-gray-700 hover:text-brand-orange font-medium transition"
+                  className="text-gray-700 hover:text-brand-orange font-medium transition whitespace-nowrap"
                 >
                   {link.label}
                 </button>
@@ -106,23 +109,30 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               ))}
             </div>
 
-            {/* Language Selector */}
-            <div className="flex items-center space-x-2 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
-              <Globe size={16} className="text-brand-orange" />
-              <div className="flex space-x-1 text-sm font-medium">
-                {(['th', 'en', 'cn'] as Language[]).map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={() => setLang(lang)}
-                    className={`px-2 py-0.5 rounded transition ${
-                      currentLang === lang 
-                        ? 'bg-brand-orange text-white shadow-sm' 
-                        : 'text-gray-500 hover:text-brand-dark hover:bg-gray-200'
-                    }`}
-                  >
-                    {lang.toUpperCase()}
-                  </button>
-                ))}
+            {/* เบอร์โทรศัพท์ และ Language Selector */}
+            <div className="flex items-center gap-4">
+              <a href="tel:0943476691" className="hidden lg:flex items-center text-gray-700 hover:text-brand-orange font-bold whitespace-nowrap transition">
+                <Phone size={18} className="mr-1.5 text-brand-orange" />
+                094 347 6691
+              </a>
+
+              <div className="flex items-center space-x-2 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
+                <Globe size={16} className="text-brand-orange" />
+                <div className="flex space-x-1 text-sm font-medium">
+                  {(['th', 'en', 'cn'] as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => setLang(lang)}
+                      className={`px-2 py-0.5 rounded transition ${
+                        currentLang === lang 
+                          ? 'bg-brand-orange text-white shadow-sm' 
+                          : 'text-gray-500 hover:text-brand-dark hover:bg-gray-200'
+                      }`}
+                    >
+                      {lang.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -131,9 +141,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-brand-orange focus:outline-none p-2"
+              className="text-gray-700 hover:text-brand-orange focus:outline-none p-2 bg-gray-50 rounded-lg"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -144,50 +154,68 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex flex-col space-y-4">
           
           {/* Mobile Links */}
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleNavClick(link.id)}
-              className="text-left w-full text-lg font-medium text-gray-700 hover:text-brand-orange border-b border-gray-50 pb-2"
-            >
-              {link.label}
-            </button>
-          ))}
-
-          {/* Mobile Socials */}
-          <div className="pt-2">
-            <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดตามเราได้ที่</p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`text-gray-600 bg-gray-100 p-2.5 rounded-full ${social.hoverColor}`}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Languages */}
-          <div className="pt-2 flex items-center space-x-3">
-            <Globe size={18} className="text-gray-500" />
-            {(['th', 'en', 'cn'] as Language[]).map((lang) => (
+          <div className="space-y-1">
+            {navLinks.map((link) => (
               <button
-                key={lang}
-                onClick={() => { setLang(lang); setIsOpen(false); }}
-                className={`px-3 py-1 rounded-md text-sm font-medium border ${
-                  currentLang === lang 
-                    ? 'bg-brand-orange text-white border-brand-orange' 
-                    : 'bg-white text-gray-600 border-gray-300'
-                }`}
+                key={link.id}
+                onClick={() => handleNavClick(link.id)}
+                className="text-left w-full text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 px-3 py-2 rounded-lg transition"
               >
-                {lang.toUpperCase()}
+                {link.label}
               </button>
             ))}
+          </div>
+
+          {/* เบอร์โทรศัพท์มือถือ */}
+          <div className="px-3 py-2 bg-gray-50 rounded-lg border border-gray-100">
+            <p className="text-xs text-gray-400 mb-1 font-semibold uppercase">ติดต่อฝ่ายขาย</p>
+            <a href="tel:0943476691" className="flex items-center text-brand-dark hover:text-brand-orange font-bold text-lg">
+              <Phone size={20} className="mr-2 text-brand-orange" />
+              094 347 6691
+            </a>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-2 border-t border-gray-100 mt-2">
+            {/* Mobile Socials */}
+            <div className="flex-1">
+              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดตามเราได้ที่</p>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-600 bg-gray-100 p-2.5 rounded-full ${social.hoverColor}`}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Languages */}
+            <div className="flex-1">
+              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">เลือกภาษา</p>
+              <div className="flex items-center space-x-2">
+                <Globe size={18} className="text-gray-500" />
+                <div className="flex gap-2 w-full">
+                  {(['th', 'en', 'cn'] as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => { setLang(lang); setIsOpen(false); }}
+                      className={`flex-1 py-1.5 rounded-md text-sm font-medium border transition ${
+                        currentLang === lang 
+                          ? 'bg-brand-orange text-white border-brand-orange shadow-sm' 
+                          : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50'
+                      }`}
+                    >
+                      {lang.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
