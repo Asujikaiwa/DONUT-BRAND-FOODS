@@ -9,13 +9,14 @@ interface NavbarProps {
   scrollToSection: (id: string) => void;
 }
 
-// สร้าง Custom Icon สำหรับ TikTok และ Line
+// สร้าง Custom Icon สำหรับ TikTok
 const TiktokIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3" />
   </svg>
 );
 
+// สร้าง Custom Icon สำหรับ Line แบบวาดลายเส้น (ให้เปลี่ยนสีได้เหมือนไอคอนอื่น)
 const LineIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21.5 10.5C21.5 6.35786 17.2467 3 12 3C6.75329 3 2.5 6.35786 2.5 10.5C2.5 13.9167 4.79326 16.8184 8.08272 17.7508C8.58309 17.893 8.70678 18.2573 8.61899 18.7296C8.54719 19.1158 8.16335 20.8967 8.09355 21.2464C7.99464 21.7423 8.35852 21.8465 8.76106 21.5979C9.20625 21.323 14.1505 18.4239 16.6385 16.2713C19.5935 13.7145 21.5 12.2458 21.5 10.5Z" />
@@ -67,10 +68,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
             className="flex-shrink-0 cursor-pointer flex items-center gap-3" 
             onClick={() => handleNavClick('home')}
           >
-            {/* รูปโลโก้ */}
+            {/* รูปโลโก้แบรนด์ */}
             <img src="/PictureProduct/Other/Logo/logo.jpg" alt="Donut Brand Logo" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover border-2 border-brand-orange/20" />
             
-            {/* ข้อความโลโก้ */}
             <span className="text-xl sm:text-2xl font-bold font-display text-brand-orange whitespace-nowrap">
               DONUT <span className="text-brand-dark">BRAND</span>
             </span>
@@ -78,7 +78,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {/* Main Links */}
             <div className="flex space-x-4 lg:space-x-6">
               {navLinks.map((link) => (
                 <button
@@ -101,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-gray-500 p-2 rounded-full transition-colors duration-200 ${social.hoverColor} tooltip`}
+                  className={`text-gray-500 p-2 rounded-full flex items-center justify-center transition-colors duration-200 ${social.hoverColor} tooltip`}
                   title={social.name}
                 >
                   {social.icon}
@@ -152,8 +151,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex flex-col space-y-4">
-          
-          {/* Mobile Links */}
           <div className="space-y-1">
             {navLinks.map((link) => (
               <button
@@ -166,7 +163,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
             ))}
           </div>
 
-          {/* เบอร์โทรศัพท์มือถือ */}
           <div className="px-3 py-2 bg-gray-50 rounded-lg border border-gray-100">
             <p className="text-xs text-gray-400 mb-1 font-semibold uppercase">ติดต่อฝ่ายขาย</p>
             <a href="tel:0943476691" className="flex items-center text-brand-dark hover:text-brand-orange font-bold text-lg">
@@ -176,7 +172,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2 border-t border-gray-100 mt-2">
-            {/* Mobile Socials */}
             <div className="flex-1">
               <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดตามเราได้ที่</p>
               <div className="flex flex-wrap gap-3">
@@ -186,7 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-gray-600 bg-gray-100 p-2.5 rounded-full ${social.hoverColor}`}
+                    className={`text-gray-600 bg-gray-100 p-2.5 rounded-full flex items-center justify-center transition-colors ${social.hoverColor}`}
                   >
                     {social.icon}
                   </a>
@@ -194,7 +189,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               </div>
             </div>
 
-            {/* Mobile Languages */}
             <div className="flex-1">
               <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">เลือกภาษา</p>
               <div className="flex items-center space-x-2">
@@ -217,7 +211,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               </div>
             </div>
           </div>
-
         </div>
       )}
     </nav>

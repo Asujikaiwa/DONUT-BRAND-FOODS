@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Translation, Product, Language } from '../types';
 import { db } from '../firebase'; 
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { Search, ChevronDown } from 'lucide-react';
+import { Search, ChevronDown, Percent } from 'lucide-react';
 
 interface ProductListProps {
   t: Translation['products'];
   currentLang: Language;
 }
 
-// สร้าง Component ย่อยสำหรับแสดงสินค้า 1 ชิ้น เพื่อให้จัดการ State ของ "ไซส์ที่เลือก" แยกกันได้
-const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ product, currentLang }) => {  // รวบรวมข้อมูลไซส์ (รองรับทั้งแบบเก่าและแบบใหม่)
-  const variants = product.variants && product.variants.length > 0 
+const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ product, currentLang }) => {  const variants = product.variants && product.variants.length > 0 
     ? product.variants 
     : (product.weight ? [{ weight: product.weight, price: product.price || 0 }] : []);
   
@@ -19,20 +17,16 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
   const activeVariant = variants[selectedIdx] || { weight: '-', price: 0 };
 
   return (
-    <div className="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-      {/* Image & Badges */}
+    <div className="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full relative">
+      
+      {/* ภาพและป้ายกำกับ */}
       <div className="relative overflow-hidden aspect-square bg-gray-50 flex-shrink-0">
-        {/* ป้ายกำกับ NEW & BEST SELLER */}
         <div className="absolute top-3 left-3 flex flex-col gap-2 z-10">
           {product.isNew && (
-            <span className="bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-              NEW
-            </span>
+            <span className="bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm">NEW</span>
           )}
           {product.isBestSeller && (
-            <span className="bg-brand-yellow text-brand-dark text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm flex items-center">
-              ⭐ BEST SELLER
-            </span>
+            <span className="bg-brand-yellow text-brand-dark text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm">⭐ BEST SELLER</span>
           )}
         </div>
 
@@ -42,14 +36,14 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />
         
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-white font-bold border-2 border-white px-4 py-2 rounded-full backdrop-blur-sm">
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+          <span className="text-white font-bold border-2 border-white px-4 py-2 rounded-full">
             ดูรายละเอียด
           </span>
         </div>
       </div>
 
-      {/* Info */}
+      {/* ข้อมูลสินค้า */}
       <div className="p-4 text-center flex flex-col flex-1 justify-between">
         <div>
           <h3 className="text-sm sm:text-lg font-bold text-gray-800 mb-3 font-display min-h-[3rem] flex items-center justify-center line-clamp-2">
@@ -78,7 +72,6 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
           )}
         </div>
 
-        {/* ราคา */}
         <div className="mt-auto">
           {activeVariant.price > 0 ? (
             <p className="text-brand-orange font-bold text-xl sm:text-2xl">
@@ -99,29 +92,34 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState<Product[]>([]);
+  const [banners, setBanners] = useState<any[]>([]); // สำหรับเก็บรูปโปรโมชั่น
   const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(12); // โชว์ 12 ชิ้น (3 บรรทัด) ในตอนแรก
+  const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
-    const q = query(collection(db, 'products'), orderBy('category'));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const loadedProducts = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Product[];
-      setProducts(loadedProducts);
+    // 1. ดึงข้อมูลสินค้า
+    const qProduct = query(collection(db, 'products'), orderBy('category'));
+    const unsubProduct = onSnapshot(qProduct, (snapshot) => {
+      setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Product[]);
       setLoading(false);
     });
-    return () => unsubscribe();
+
+    // 2. ดึงข้อมูลแบนเนอร์โปรโมชั่น
+    const qBanner = query(collection(db, 'banners'));
+    const unsubBanner = onSnapshot(qBanner, (snapshot) => {
+      setBanners(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    });
+
+    return () => { unsubProduct(); unsubBanner(); };
   }, []);
 
-  // รีเซ็ตการแสดงผลเมื่อมีการค้นหาหรือเปลี่ยนหมวดหมู่
   useEffect(() => {
     setVisibleCount(12);
   }, [filter, searchTerm]);
 
-  // ระบบ Filter & Search
+  // ระบบค้นหาและซ่อนสินค้า
   const filteredProducts = products.filter(p => {
+    if ((p as any).isHidden) return false; 
     const matchCategory = filter === 'all' || p.category === filter;
     const matchSearch = p.name.th.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         (p.name.en && p.name.en.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -141,13 +139,36 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
     <section id="products" className="py-20 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* ================= จุดแสดงแบนเนอร์โปรโมชั่น ================= */}
+        {banners.length > 0 && (
+          <div className="mb-16">
+            <div className="flex items-center gap-2 mb-6 border-l-4 border-brand-orange pl-3">
+              <Percent className="text-brand-orange" size={24} />
+              <h3 className="text-2xl font-bold text-gray-800 font-display">โปรโมชั่นพิเศษ (Promotions)</h3>
+            </div>
+            
+            {/* เลื่อนสไลด์รูปแบนเนอร์ */}
+            <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
+              {banners.map((b) => (
+                <div key={b.id} className="snap-center flex-shrink-0 w-[85%] md:w-[60%] lg:w-[45%]">
+                  <img 
+                    src={b.url} 
+                    alt="Promotion Banner" 
+                    className="w-full h-auto aspect-[16/9] object-cover rounded-2xl shadow-lg border border-gray-200"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {/* ========================================================= */}
+
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 font-display">
             {t.title}
           </h2>
           <div className="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
           
-          {/* ช่องค้นหาสินค้า */}
           <div className="max-w-md mx-auto relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input 
@@ -160,7 +181,7 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
           </div>
         </div>
 
-        {/* Filter Buttons */}
+        {/* หมวดหมู่ */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -177,11 +198,11 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
           ))}
         </div>
 
-        {/* Grid สินค้า */}
+        {/* รายการสินค้า */}
         {loading ? (
           <div className="text-center py-20 text-gray-400 flex flex-col items-center">
             <div className="w-10 h-10 border-4 border-gray-200 border-t-brand-orange rounded-full animate-spin mb-4"></div>
-            กำลังโหลดสินค้า...
+            กำลังโหลดข้อมูล...
           </div>
         ) : (
           <>
@@ -197,7 +218,6 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
                </div>
             )}
 
-            {/* ปุ่มแสดงเพิ่มเติม */}
             {filteredProducts.length > visibleCount && (
               <div className="text-center mt-12">
                 <button 
