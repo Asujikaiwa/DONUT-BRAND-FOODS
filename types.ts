@@ -45,6 +45,10 @@ export interface Translation {
   about: {
     title: string;
     description: string;
+    certTitle: string; // เพิ่ม
+    certDesc: string; // เพิ่ม
+    processTitle: string; // เพิ่ม
+    facilities: string[]; // เพิ่ม
   };
   products: {
     title: string;
@@ -61,6 +65,7 @@ export interface Translation {
     followUs: string;
   };
 }
+
 export interface HeroSlide {
   id: string;
   url: string; // เก็บ URL ของวิดีโอ

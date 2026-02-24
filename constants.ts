@@ -2,143 +2,69 @@ import { Language, Product, Translation } from './types';
 
 export const TRANSLATIONS: Record<Language, Translation> = {
   th: {
-    nav: {
-      home: 'หน้าแรก',
-      products: 'สินค้า',
-      contact: 'ติดต่อเรา',
-    },
-    hero: {
-      title: 'รสชาติที่ลงตัว คู่ครัวคุณ',
-      subtitle: 'ผู้ผลิตและจำหน่ายผงปรุงรสและวัตถุเจือปนอาหารคุณภาพสูง ตราโดนัท',
-      cta: 'ดูสินค้าของเรา',
-    },
+    nav: { home: 'หน้าแรก', products: 'สินค้า', contact: 'ติดต่อเรา' },
+    hero: { title: 'รสชาติที่ลงตัว คู่ครัวคุณ', subtitle: 'ผู้ผลิตและจำหน่ายผงปรุงรสและวัตถุเจือปนอาหารคุณภาพสูง ตราโดนัท', cta: 'ดูสินค้าของเรา' },
     about: {
-      title: 'เกี่ยวกับเรา',
-      description: 'ประวัติ บริษัท อธิป พาณิชย์ จำกัด ก่อตั้งในนาม คุณคนึงรัตน์ ใจตรง เมื่อปี พศ.2543 ดำเนินธุรกิจเกี่ยวกับผลิตและจำหน่าย“ผงปรุงรส”เพื่อขายให้แก่อุตสาหกรรมขนม ได้แก่ ข้าวเกรียบ ข้าวโพดอบกรอบ เป็นต้น ต่อมาในช่วงปี พศ.2546 คุณคนึงรัตน์ ใจตรง ได้เล็งเห็นถึงการมาของกระแส ชานมไข่มุก จึงได้นำเอาผลิตภัณฑ์ “ครีมเทียม” มาจำหน่ายในช่วงนั้น ทำให้กิจการเริ่มขยับขยาย และเติบโตขึ้นอย่างต่อเนื่อง จนกระทั้งในปี พศ.2560 จึงจดทะเบียนบริษัท ในนาม “บริษัท อธิป พาณิชย์ จำกัด” จากนั้นทางบริษัทฯ ก็ได้มีการขยับขยายสินค้าออกมามากมาย ทั้งในส่วนของ “เครื่องดื่มชนิดผง” “ผงครีมชีส” ”วัตถุเจือปนอาหาร” และอื่นๆอีกมากมายจนถึงปัจจุบัน',
+      title: 'ประวัติบริษัท',
+      description: 'บริษัท อธิป พาณิชย์ จำกัด ก่อตั้งในนาม คุณคนึงรัตน์ ใจตรง เมื่อปี พศ.2543 ดำเนินธุรกิจเกี่ยวกับผลิตและจำหน่าย“ผงปรุงรส”เพื่อขายให้แก่อุตสาหกรรมขนม ได้แก่ ข้าวเกรียบ ข้าวโพดอบกรอบ เป็นต้น\n\nต่อมาในช่วงปี พศ.2546 คุณคนึงรัตน์ ใจตรง ได้เล็งเห็นถึงการมาของกระแส ชานมไข่มุก จึงได้นำเอาผลิตภัณฑ์ “ครีมเทียม” มาจำหน่ายในช่วงนั้น ทำให้กิจการเริ่มขยับขยาย และเติบโตขึ้นอย่างต่อเนื่อง\n\nจนกระทั้งในปี พศ.2560 จึงจดทะเบียนบริษัท ในนาม “บริษัท อธิป พาณิชย์ จำกัด” จากนั้นทางบริษัทฯ ก็ได้มีการขยับขยายสินค้าออกมามากมาย ทั้งในส่วนของ “เครื่องดื่มชนิดผง” “ผงครีมชีส” ”วัตถุเจือปนอาหาร” และอื่นๆอีกมากมายจนถึงปัจจุบัน',
+      certTitle: 'การรับรองมาตรฐานระดับสากล',
+      certDesc: 'บริษัท อธิป พาณิชย์ จำกัด ให้ความสำคัญกับความปลอดภัยและคุณภาพของอาหารเป็นอันดับหนึ่ง โรงงานของเราได้รับการรับรองระบบคุณภาพมาตรฐานสากล CODEX HACCP และ GHPs (Good Hygiene Practices)\n\nซึ่งเป็นการรับประกันว่ากระบวนการผลิตของเรามีความสะอาด ปลอดภัย และได้มาตรฐานในทุกขั้นตอน ตั้งแต่การคัดสรรวัตถุดิบ การควบคุมการผลิต ไปจนถึงการจัดเก็บและส่งมอบ เพื่อให้ผู้บริโภคมั่นใจในคุณภาพสินค้าทุกชิ้นภายใต้แบรนด์ "โดนัท"',
+      processTitle: 'กระบวนการและมาตรฐานการทำงาน',
+      facilities: [
+        'โรงงานและเครื่องจักรที่ทันสมัย สะอาด ปลอดภัย',
+        'ควบคุมคุณภาพอย่างเข้มงวดในทุกขั้นตอนการผลิต',
+        'คลังสินค้าและระบบจัดเก็บที่ได้มาตรฐานสากล',
+        'ทีมงานผู้เชี่ยวชาญดูแลกระบวนการผลิตอย่างใกล้ชิด',
+        'การบรรจุหีบห่อที่มิดชิด รักษาคุณภาพสินค้าให้อยู่ได้นาน',
+        'กระบวนการผสมที่แม่นยำ เพื่อรสชาติที่สม่ำเสมอ',
+        'พร้อมส่งมอบผลิตภัณฑ์คุณภาพสูงถึงมือผู้บริโภค'
+      ]
     },
-    products: {
-      title: 'สินค้าของเรา',
-      filterAll: 'ทั้งหมด',
-      filterSeasoning: 'ผงปรุงรส',
-      filterBeverage: 'เครื่องดื่ม',
-      filterAdditives: 'วัตถุดิบ/สารเสริม',
-    },
-    contact: {
-      title: 'ติดต่อเรา',
-      addressLabel: 'ที่อยู่บริษัท',
-      phoneLabel: 'เบอร์โทรศัพท์',
-      emailLabel: 'อีเมล',
-      followUs: 'ติดตามเราได้ที่',
-    },
+    products: { title: 'สินค้าของเรา', filterAll: 'ทั้งหมด', filterSeasoning: 'ผงปรุงรส', filterBeverage: 'เครื่องดื่ม', filterAdditives: 'วัตถุดิบ/สารเสริม' },
+    contact: { title: 'ติดต่อเรา', addressLabel: 'ที่อยู่บริษัท', phoneLabel: 'เบอร์โทรศัพท์', emailLabel: 'อีเมล', followUs: 'ติดตามเราได้ที่' },
   },
   en: {
-    nav: {
-      home: 'Home',
-      products: 'Products',
-      contact: 'Contact',
-    },
-    hero: {
-      title: 'The Perfect Taste for Your Kitchen',
-      subtitle: 'Manufacturer and distributor of high-quality food additives and seasoning powders, Donut Brand.',
-      cta: 'View Products',
-    },
+    nav: { home: 'Home', products: 'Products', contact: 'Contact' },
+    hero: { title: 'The Perfect Taste for Your Kitchen', subtitle: 'Manufacturer and distributor of high-quality food additives and seasoning powders, Donut Brand.', cta: 'View Products' },
     about: {
-      title: 'About Us',
-      description: 'Our company is committed to producing high-quality food additives and seasoning powders that meet FDA and Halal standards. We cater to both entrepreneurs and households. With years of experience, we select the finest ingredients to create tastes that delight. Our range includes shaking powders, seasonings, fruit-flavored drink powders, and food enhancers.',
+      title: 'Company History',
+      description: 'Athip Panich Co., Ltd. was founded by Ms. Kanuengrut Jaitrong in 2000. The business started by manufacturing and distributing "seasoning powders" for the snack industry, such as crackers and crispy corn.\n\nLater, in 2003, seeing the rising trend of bubble tea, Ms. Kanuengrut began selling "non-dairy creamer", which led to continuous business expansion and growth.\n\nEventually, in 2017, the company was officially registered as "Athip Panich Co., Ltd.". Since then, the company has expanded its product lines extensively, including "beverage powders", "cream cheese powders", "food additives", and many others to this day.',
+      certTitle: 'International Standard Certifications',
+      certDesc: 'Athip Panich Co., Ltd. prioritizes food safety and quality above all else. Our factory is certified with international quality standard systems: CODEX HACCP and GHPs (Good Hygiene Practices).\n\nThis guarantees that our production processes are clean, safe, and standardized at every step—from selecting raw materials and controlling production to storage and delivery. Consumers can be confident in the quality of every product under the "Donut" brand.',
+      processTitle: 'Working Process & Standards',
+      facilities: [
+        'Modern, clean, and safe factory and machinery',
+        'Strict quality control in every production step',
+        'Warehouse and storage systems meeting international standards',
+        'Expert team closely monitoring the production process',
+        'Secure packaging to preserve product quality for longer',
+        'Precise mixing process for consistent flavor',
+        'Ready to deliver high-quality products to consumers'
+      ]
     },
-    products: {
-      title: 'Our Products',
-      filterAll: 'All',
-      filterSeasoning: 'Seasonings',
-      filterBeverage: 'Beverages',
-      filterAdditives: 'Additives',
-    },
-    contact: {
-      title: 'Contact Us',
-      addressLabel: 'Address',
-      phoneLabel: 'Phone',
-      emailLabel: 'Email',
-      followUs: 'Follow Us',
-    },
+    products: { title: 'Our Products', filterAll: 'All', filterSeasoning: 'Seasonings', filterBeverage: 'Beverages', filterAdditives: 'Additives' },
+    contact: { title: 'Contact Us', addressLabel: 'Address', phoneLabel: 'Phone', emailLabel: 'Email', followUs: 'Follow Us' },
   },
   cn: {
-    nav: {
-      home: '首页',
-      products: '产品',
-      contact: '联系我们',
-    },
-    hero: {
-      title: '厨房的完美味道',
-      subtitle: 'Donut 品牌高品质食品添加剂和调味粉的生产商和分销商。',
-      cta: '查看产品',
-    },
+    nav: { home: '首页', products: '产品', contact: '联系我们' },
+    hero: { title: '厨房的完美味道', subtitle: 'Donut 品牌高品质食品添加剂和调味粉的生产商和分销商。', cta: '查看产品' },
     about: {
-      title: '关于我们',
-      description: '我们要致力于生产符合 FDA 和清真标准的高品质食品添加剂和调味粉。我们为企业家和家庭提供服务。凭借多年的经验，我们精选最优质的原料，创造出令人愉悦的口味。我们的产品范围包括摇摇粉、调味料、果味饮料粉和食品强化剂。',
+      title: '公司历史',
+      description: 'Athip Panich 有限公司由 Kanuengrut Jaitrong 女士于 2000 年创立。该业务最初为休闲食品行业（如饼干和脆玉米）生产和销售“调味粉”。\n\n后来，在 2003 年，看到珍珠奶茶的上升趋势，Kanuengrut 女士开始销售“植脂末”，这导致业务不断扩张和增长。\n\n最终，在 2017 年，公司正式注册为“Athip Panich 有限公司”。从那时起，公司广泛扩展了其产品线，包括“饮料粉”、“奶油芝士粉”、“食品添加剂”以及至今的许多其他产品。',
+      certTitle: '国际标准认证',
+      certDesc: 'Athip Panich 有限公司将食品安全和质量放在首位。我们的工厂已通过国际质量标准体系认证：CODEX HACCP 和 GHPs（良好卫生规范）。\n\n这保证了我们的生产过程在从选择原材料和控制生产到储存和交付的每一个环节都是清洁、安全和标准化的。消费者可以对“Donut”品牌下每一件产品的质量充满信心。',
+      processTitle: '工作流程与标准',
+      facilities: [
+        '现代化、清洁、安全的工厂和机械',
+        '每个生产环节的严格质量控制',
+        '符合国际标准的仓库和存储系统',
+        '专家团队密切监控生产过程',
+        '安全的包装，更长时间地保持产品质量',
+        '精确的混合工艺，确保风味一致',
+        '准备向消费者交付高质量产品'
+      ]
     },
-    products: {
-      title: '我们的产品',
-      filterAll: '全部',
-      filterSeasoning: '调味料',
-      filterBeverage: '饮料',
-      filterAdditives: '添加剂',
-    },
-    contact: {
-      title: '联系我们',
-      addressLabel: '地址',
-      phoneLabel: '电话',
-      emailLabel: '电子邮件',
-      followUs: '关注我们',
-    },
+    products: { title: '我们的产品', filterAll: '全部', filterSeasoning: '调味料', filterBeverage: '饮料', filterAdditives: '添加剂' },
+    contact: { title: '联系我们', addressLabel: '地址', phoneLabel: '电话', emailLabel: '电子邮件', followUs: '关注我们' },
   },
 };
-
-// NOTE: Since we cannot host the user's specific images, we are using high-quality placeholders 
-// that closely resemble the items (Seasoning packets, powders, beverages).
-// In a real deployment, replace these URLs with the actual image paths.
-
-export const PRODUCTS: Product[] = [
-  // ==========================================
-  // หมวดหมู่: ผงปรุงรส (Seasoning)
-  // ==========================================
-  { id: 's1', category: 'seasoning', name: { th: 'ผงปรุงรสบาร์บีคิว', en: 'BBQ Seasoning', cn: '烧烤调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/BBQ500G.jpeg' },
-  { id: 's2', category: 'seasoning', name: { th: 'ผงปรุงรสชีส', en: 'Cheese Seasoning', cn: '芝士调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Cheese500G.jpeg' },
-  { id: 's3', category: 'seasoning', name: { th: 'ผงปรุงรสชีส (สูตร S)', en: 'Cheese Seasoning (S)', cn: '芝士调料 (S)' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/CheeseS500G.jpeg' },
-  { id: 's4', category: 'seasoning', name: { th: 'ผงปรุงรสพริกชีส', en: 'Chilli Cheese Seasoning', cn: '辣椒芝士调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/ChilliCheese500G.jpeg' },
-  { id: 's5', category: 'seasoning', name: { th: 'ผงปรุงรสข้าวโพด', en: 'Corn Seasoning', cn: '玉米调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Corn500G.jpeg' },
-  { id: 's6', category: 'seasoning', name: { th: 'ผงปรุงรสกุ้งย่าง', en: 'Grilled Shrimp Seasoning', cn: '烤虾调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/GrillShrimp500G.jpeg' },
-  { id: 's7', category: 'seasoning', name: { th: 'ผงปรุงรสปลาหมึกย่าง', en: 'Grilled Squid Seasoning', cn: '烤鱿鱼调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/GrilledSquid500G.jpeg' },
-  { id: 's8', category: 'seasoning', name: { th: 'ผงฮอทแอนด์สไปซี่', en: 'Hot & Spicy Seasoning', cn: '香辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Hot&spicy500G.jpeg' },
-  { id: 's9', category: 'seasoning', name: { th: 'ผงปรุงรสลาบ', en: 'Larb Seasoning', cn: '泰式凉拌调料' }, weight: '100g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Larb500G.jpeg' },
-  { id: 's10', category: 'seasoning', name: { th: 'ผงปรุงรสมีตตี้ชีส', en: 'Meaty Cheese Seasoning', cn: '肉香芝士调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/MeatyCheese500G.jpeg' },
-  { id: 's11', category: 'seasoning', name: { th: 'ผงปรุงรสหม่าล่า', en: 'Mhala Seasoning', cn: '麻辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Mhala500G.jpeg' },
-  { id: 's12', category: 'seasoning', name: { th: 'ผงปรุงรสชีสนม', en: 'Milk Cheese Seasoning', cn: '牛奶芝士调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/MilkCheese500G.jpeg' },
-  { id: 's13', category: 'seasoning', name: { th: 'ผงปรุงรสปาปริก้า', en: 'Paprika Seasoning', cn: '红椒调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Paprika500G.jpeg' },
-  { id: 's14', category: 'seasoning', name: { th: 'ผงปรุงรสพิซซ่า', en: 'Pizza Seasoning', cn: '披萨调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Pizza500G.jpeg' },
-  { id: 's15', category: 'seasoning', name: { th: 'ผงปรุงรสไข่เค็ม', en: 'Salted Egg Seasoning', cn: '咸蛋黄调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/SaltedEgg500G.jpeg' },
-  { id: 's16', category: 'seasoning', name: { th: 'ผงปรุงรสสาหร่าย', en: 'Seaweed Seasoning', cn: '海苔调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/Seaweed500G.jpeg' },
-  { id: 's17', category: 'seasoning', name: { th: 'ผงซาวครีมและหัวหอม', en: 'Sour Cream & Onion', cn: '酸奶油洋葱' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/SourCreamAndOnion500G.jpeg' },
-  { id: 's18', category: 'seasoning', name: { th: 'ผงซีฟู้ดสไปซี่', en: 'Spicy Seafood Seasoning', cn: '香辣海鲜调料' }, weight: '50g / 100g / 200g', price: 0, image: '/PictureProduct/FoodPowder/SpicySeafood200G.jpeg' },
-  { id: 's19', category: 'seasoning', name: { th: 'ผงปรุงรสต้มยำ', en: 'Tom Yum Seasoning', cn: '冬阴功调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/TomYum500G.jpeg' },
-  { id: 's20', category: 'seasoning', name: { th: 'ผงปรุงรสวิงซ์แซ่บ', en: 'Wing Zab Seasoning', cn: '香辣鸡翅调料' }, weight: '200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/WingZab500G.jpeg', isNew: true },
-  { id: 's21', category: 'seasoning', name: { th: 'ผงปรุงรสแซ่บซี๊ด', en: 'Zab Zeed Seasoning', cn: '极辣调料' }, weight: '100g / 200g / 500g', price: 0, image: '/PictureProduct/FoodPowder/ZabZeed500G.jpeg' },
-
-  // ==========================================
-  // หมวดหมู่: เครื่องดื่ม (Beverage)
-  // ==========================================
-  { id: 'b1', category: 'beverage', name: { th: 'ผงชานมไข่มุก', en: 'Bubble Tea Powder', cn: '珍珠奶茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/BubbleTea200G.jpeg' },
-  { id: 'b2', category: 'beverage', name: { th: 'ผงแคนตาลูป', en: 'Cantaloupe Powder', cn: '哈密瓜粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Cantaloupe200G.jpeg' },
-  { id: 'b3', category: 'beverage', name: { th: 'ผงช็อกโกแลต', en: 'Chocolate Powder', cn: '巧克力粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Chocolate200G.jpeg' },
-  { id: 'b4', category: 'beverage', name: { th: 'ผงโกโก้', en: 'Cocoa Powder', cn: '可可粉' }, weight: '120g', price: 0, image: '/PictureProduct/WaterPowder/Cocoa120G.jpeg' },
-  { id: 'b5', category: 'beverage', name: { th: 'ผงมะพร้าว', en: 'Coconut Powder', cn: '椰子粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Coconut200G.jpeg' },
-  { id: 'b6', category: 'beverage', name: { th: 'ผงชาเขียวมัทฉะ', en: 'Matcha Green Tea', cn: '抹茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg' },
-  { id: 'b7', category: 'beverage', name: { th: 'นมผง', en: 'Milk Powder', cn: '奶粉' }, weight: '200g / 1000g', price: 0, image: '/PictureProduct/WaterPowder/Milk1000G.jpeg' },
-  { id: 'b8', category: 'beverage', name: { th: 'ผงนมเย็น', en: 'Pink Milk (Nom Yen)', cn: '粉红奶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/Nomyen200G.png' },
-  { id: 'b9', category: 'beverage', name: { th: 'ผงเผือกหอม', en: 'Taro Powder', cn: '香芋粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/TaroBubble200G.jpeg' },
-  { id: 'b10', category: 'beverage', name: { th: 'ผงชาไทย', en: 'Thai Tea Powder', cn: '泰式茶粉' }, weight: '200g', price: 0, image: '/PictureProduct/WaterPowder/ThaiTea200G.jpeg' },
-
-  // ==========================================
-  // หมวดหมู่: วัตถุดิบ/สารเสริม (Additives)
-  // ==========================================
-  { id: 'a1', category: 'additives', name: { th: 'กรดมะนาว (Citric Acid)', en: 'Citric Acid', cn: '柠檬酸' }, weight: '500g / 1000g', price: 0, image: '/PictureProduct/Other/CitricAcid1000G.jpeg' }
-];

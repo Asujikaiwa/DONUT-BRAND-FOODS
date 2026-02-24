@@ -7,15 +7,15 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ t }) => {
-  // ข้อมูลรูปภาพ 1-7 พร้อมคำอธิบาย 
-  const facilities = [
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_1.jpg', desc: 'โรงงานและเครื่องจักรที่ทันสมัย สะอาด ปลอดภัย' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_2.jpg', desc: 'ควบคุมคุณภาพอย่างเข้มงวดในทุกขั้นตอนการผลิต' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_3.jpg', desc: 'คลังสินค้าและระบบจัดเก็บที่ได้มาตรฐานสากล' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_4.jpg', desc: 'ทีมงานผู้เชี่ยวชาญดูแลกระบวนการผลิตอย่างใกล้ชิด' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_5.jpg', desc: 'การบรรจุหีบห่อที่มิดชิด รักษาคุณภาพสินค้าให้อยู่ได้นาน' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_6.jpg', desc: 'กระบวนการผสมที่แม่นยำ เพื่อรสชาติที่สม่ำเสมอ' },
-    { src: '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_7.jpg', desc: 'พร้อมส่งมอบผลิตภัณฑ์คุณภาพสูงถึงมือผู้บริโภค' },
+  // ข้อมูลรูปภาพ 1-7 (ดึงคำอธิบายมาจากไฟล์แปลภาษา)
+  const facilityImages = [
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_1.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_2.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_3.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_4.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_5.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_6.jpg',
+    '/PictureProduct/Other/About/LINE_ALBUM_Information_260224_7.jpg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,13 +23,13 @@ const About: React.FC<AboutProps> = ({ t }) => {
   // เลื่อนสไลด์อัตโนมัติทุกๆ 4 วินาที
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % facilities.length);
+      setCurrentIndex((prev) => (prev + 1) % facilityImages.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, [facilities.length]);
+  }, [facilityImages.length]);
 
-  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % facilities.length);
-  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + facilities.length) % facilities.length);
+  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % facilityImages.length);
+  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
 
   return (
     <section id="about" className="py-20 bg-brand-cream relative">
@@ -91,21 +91,28 @@ const About: React.FC<AboutProps> = ({ t }) => {
             <div className="w-full md:w-3/5">
               <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-4 flex items-center gap-2">
                 <CheckCircle className="text-green-500" size={28} />
-                การรับรองมาตรฐานระดับสากล
+                {t.certTitle} {/* ใช้คำแปล */}
               </h3>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                บริษัท อธิป พาณิชย์ จำกัด ให้ความสำคัญกับความปลอดภัยและคุณภาพของอาหารเป็นอันดับหนึ่ง โรงงานของเราได้รับการรับรองระบบคุณภาพมาตรฐานสากล <strong>CODEX HACCP</strong> และ <strong>GHPs (Good Hygiene Practices)</strong> 
-                <br/><br/>
-                ซึ่งเป็นการรับประกันว่ากระบวนการผลิตของเรามีความสะอาด ปลอดภัย และได้มาตรฐานในทุกขั้นตอน ตั้งแต่การคัดสรรวัตถุดิบ การควบคุมการผลิต ไปจนถึงการจัดเก็บและส่งมอบ เพื่อให้ผู้บริโภคมั่นใจในคุณภาพสินค้าทุกชิ้นภายใต้แบรนด์ "โดนัท"
+                {t.certDesc.split('\n').map((paragraph, idx) => (
+                   <React.Fragment key={idx}>
+                      {paragraph.includes('CODEX HACCP') ? (
+                         <span dangerouslySetInnerHTML={{__html: paragraph.replace('CODEX HACCP', '<strong>CODEX HACCP</strong>').replace('GHPs (Good Hygiene Practices)', '<strong>GHPs (Good Hygiene Practices)</strong>')}} />
+                      ) : (
+                         paragraph
+                      )}
+                      <br/>
+                   </React.Fragment>
+                ))}
               </p>
             </div>
           </div>
         </div>
 
-        {/* ================= 3. ส่วนสไลด์โชว์กระบวนการทำงาน (ภาพ + ข้อความเปลี่ยนพร้อมกัน) ================= */}
+        {/* ================= 3. ส่วนสไลด์โชว์กระบวนการทำงาน ================= */}
         <div>
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-3 font-display">กระบวนการและมาตรฐานการทำงาน</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-3 font-display">{t.processTitle}</h3> {/* ใช้คำแปล */}
             <div className="w-24 h-1 bg-brand-orange mx-auto"></div>
           </div>
           
@@ -113,10 +120,10 @@ const About: React.FC<AboutProps> = ({ t }) => {
             
             {/* ฝั่งซ้าย: รูปภาพ */}
             <div className="w-full md:w-1/2 relative aspect-[4/3] md:aspect-auto md:h-[450px] bg-gray-100 overflow-hidden">
-              {facilities.map((item, index) => (
+              {facilityImages.map((src, index) => (
                 <img 
                   key={index}
-                  src={item.src} 
+                  src={src} 
                   alt={`Facility ${index + 1}`}
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                     index === currentIndex ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
@@ -125,9 +132,9 @@ const About: React.FC<AboutProps> = ({ t }) => {
               ))}
             </div>
 
-            {/* ฝั่งขวา: ข้อความอธิบาย */}
+            {/* ฝั่งขวา: ข้อความอธิบาย (ดึงจากอาเรย์ facilities ในคำแปล) */}
             <div className="w-full md:w-1/2 relative bg-white flex items-center justify-center min-h-[250px] md:min-h-[450px] p-8 md:p-12">
-              {facilities.map((item, index) => (
+              {t.facilities.map((desc, index) => (
                 <div 
                   key={index}
                   className={`absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12 text-center transition-all duration-1000 ease-in-out ${
@@ -138,7 +145,7 @@ const About: React.FC<AboutProps> = ({ t }) => {
                     <CheckCircle className="text-brand-orange" size={32} />
                   </div>
                   <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed">
-                    {item.desc}
+                    {desc}
                   </p>
                 </div>
               ))}
@@ -159,7 +166,7 @@ const About: React.FC<AboutProps> = ({ t }) => {
 
               {/* จุดบอกตำแหน่งสไลด์ (Dots) */}
               <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
-                {facilities.map((_, idx) => (
+                {facilityImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
