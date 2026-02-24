@@ -1,19 +1,6 @@
-import React from 'react';
-import { Facebook, Instagram, Phone, Mail, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 import { Language, Translation } from '../types';
-
-// Custom icons for Line and TikTok since Lucide doesn't have them built-in perfectly
-const TikTokIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-  </svg>
-);
-
-const LineIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M12 2C6.5 2 2 5.6 2 10c0 2.4 1.4 4.6 3.7 6.1.6.3.6.7.4 1.3-.3 1-.8 2.2-.9 2.3-.1.3.1.5.4.5.2 0 1.2-.2 5-2.6 1.1.3 2.3.4 3.4.4 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/>
-  </svg>
-);
+import { Menu, X, Facebook, Instagram, Mail, Globe } from 'lucide-react';
 
 interface NavbarProps {
   currentLang: Language;
@@ -22,93 +9,189 @@ interface NavbarProps {
   scrollToSection: (id: string) => void;
 }
 
+// สร้าง Custom Icon สำหรับ TikTok และ Line
+const TiktokIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3" />
+  </svg>
+);
+
+const LineIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21.5 10.5C21.5 6.35786 17.2467 3 12 3C6.75329 3 2.5 6.35786 2.5 10.5C2.5 13.9167 4.79326 16.8184 8.08272 17.7508C8.58309 17.893 8.70678 18.2573 8.61899 18.7296C8.54719 19.1158 8.16335 20.8967 8.09355 21.2464C7.99464 21.7423 8.35852 21.8465 8.76106 21.5979C9.20625 21.323 14.1505 18.4239 16.6385 16.2713C19.5935 13.7145 21.5 12.2458 21.5 10.5Z" />
+  </svg>
+);
+
 const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSection }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // เช็คการเลื่อนจอเพื่อให้ Navbar เปลี่ยนสี
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { id: 'home', label: t.home },
+    { id: 'products', label: t.products },
+    { id: 'contact', label: t.contact },
+  ];
+
+  // ข้อมูลลิงก์โซเชียลมีเดีย
+  const socialLinks = [
+    { name: 'Facebook', icon: <Facebook size={18} />, url: "https://www.facebook.com/athip.panich.donut/?locale=th_TH", hoverColor: "hover:text-blue-600 hover:bg-blue-50" },
+    { name: 'Instagram', icon: <Instagram size={18} />, url: "https://www.instagram.com/don_utbrand/", hoverColor: "hover:text-pink-600 hover:bg-pink-50" },
+    { name: 'TikTok', icon: <TiktokIcon size={18} />, url: "https://www.tiktok.com/@donut.athip", hoverColor: "hover:text-black hover:bg-gray-200" },
+    { name: 'Line', icon: <LineIcon size={18} />, url: "#", hoverColor: "hover:text-green-600 hover:bg-green-50" }, // ใส่ path Line ตรงเครื่องหมาย #
+    { name: 'Email', icon: <Mail size={18} />, url: "mailto:athip_panich@hotmail.com", hoverColor: "hover:text-red-500 hover:bg-red-50" }
+  ];
+
+  const handleNavClick = (id: string) => {
+    scrollToSection(id);
+    setIsOpen(false); // ปิดเมนูมือถือเวลาคลิก
+  };
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white shadow-md border-t-4 border-brand-orange">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white py-5'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col">
+        <div className="flex justify-between items-center">
           
-          {/* Top Row: Contact & Socials + Lang Switcher */}
-          <div className="flex justify-end items-center py-2 space-x-6 border-b border-gray-100">
-            {/* Socials & Contact */}
-            <div className="flex items-center space-x-4 text-gray-600 text-sm">
-              <a href="#" className="hover:text-brand-orange transition flex items-center gap-1">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="hover:text-brand-orange transition flex items-center gap-1">
-                <TikTokIcon className="w-[18px] h-[18px]" />
-              </a>
-              <a href="#" className="hover:text-brand-orange transition flex items-center gap-1">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="hover:text-green-500 transition flex items-center gap-1">
-                <LineIcon className="w-[18px] h-[18px]" />
-              </a>
-              <a href="tel:+66123456789" className="hover:text-brand-orange transition flex items-center gap-1">
-                <Phone size={16} /> <span>012-345-6789</span>
-              </a>
+          {/* Logo */}
+          <div 
+            className="flex-shrink-0 cursor-pointer flex items-center gap-2" 
+            onClick={() => handleNavClick('home')}
+          >
+            {/* โลโก้แบรนด์ (ถ้ามีรูปภาพสามารถใส่แท็ก <img src="/logo.jpg" /> แทนข้อความได้) */}
+            <span className="text-2xl font-bold font-display text-brand-orange">
+              DONUT <span className="text-brand-dark">BRAND</span>
+            </span>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Main Links */}
+            <div className="flex space-x-6">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link.id)}
+                  className="text-gray-700 hover:text-brand-orange font-medium transition"
+                >
+                  {link.label}
+                </button>
+              ))}
             </div>
 
-            {/* Language Switcher */}
-            <div className="flex items-center space-x-2">
-              <button 
-                onClick={() => setLang('th')} 
-                className={`px-2 py-1 text-xs rounded border transition ${currentLang === 'th' ? 'bg-brand-orange text-white border-brand-orange' : 'bg-white text-gray-500 border-gray-300 hover:bg-gray-50'}`}
-              >
-                ไทย
-              </button>
-              <button 
-                onClick={() => setLang('en')} 
-                className={`px-2 py-1 text-xs rounded border transition ${currentLang === 'en' ? 'bg-brand-orange text-white border-brand-orange' : 'bg-white text-gray-500 border-gray-300 hover:bg-gray-50'}`}
-              >
-                ENG
-              </button>
-              <button 
-                onClick={() => setLang('cn')} 
-                className={`px-2 py-1 text-xs rounded border transition ${currentLang === 'cn' ? 'bg-brand-orange text-white border-brand-orange' : 'bg-white text-gray-500 border-gray-300 hover:bg-gray-50'}`}
-              >
-                中文
-              </button>
+            <div className="h-6 w-px bg-gray-300"></div>
+
+            {/* Social Icons */}
+            <div className="flex space-x-1">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-500 p-2 rounded-full transition-colors duration-200 ${social.hoverColor} tooltip`}
+                  title={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+
+            {/* Language Selector */}
+            <div className="flex items-center space-x-2 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
+              <Globe size={16} className="text-brand-orange" />
+              <div className="flex space-x-1 text-sm font-medium">
+                {(['th', 'en', 'cn'] as Language[]).map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => setLang(lang)}
+                    className={`px-2 py-0.5 rounded transition ${
+                      currentLang === lang 
+                        ? 'bg-brand-orange text-white shadow-sm' 
+                        : 'text-gray-500 hover:text-brand-dark hover:bg-gray-200'
+                    }`}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Bottom Row: Logo (Brand) & Main Navigation */}
-          <div className="flex justify-between items-center py-4">
-            {/* Logo/Brand Name */}
-            <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
-              {/* Simple Circle Logo Placeholder */}
-              <div className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white font-bold text-xl mr-2 font-display">
-                D
-              </div>
-              <span className="text-2xl font-bold text-brand-dark font-display tracking-tight">
-                DONUT <span className="text-brand-orange">BRAND</span>
-              </span>
-            </div>
-
-            {/* Centered Navigation Buttons */}
-            <div className="flex space-x-1 md:space-x-4">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="px-4 py-2 text-brand-dark hover:text-brand-orange hover:bg-orange-50 rounded-full transition font-medium"
-              >
-                {t.home}
-              </button>
-              <button 
-                onClick={() => scrollToSection('products')}
-                className="px-4 py-2 text-brand-dark hover:text-brand-orange hover:bg-orange-50 rounded-full transition font-medium"
-              >
-                {t.products}
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="px-4 py-2 text-brand-dark hover:text-brand-orange hover:bg-orange-50 rounded-full transition font-medium"
-              >
-                {t.contact}
-              </button>
-            </div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 hover:text-brand-orange focus:outline-none p-2"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex flex-col space-y-4">
+          
+          {/* Mobile Links */}
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => handleNavClick(link.id)}
+              className="text-left w-full text-lg font-medium text-gray-700 hover:text-brand-orange border-b border-gray-50 pb-2"
+            >
+              {link.label}
+            </button>
+          ))}
+
+          {/* Mobile Socials */}
+          <div className="pt-2">
+            <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดตามเราได้ที่</p>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-600 bg-gray-100 p-2.5 rounded-full ${social.hoverColor}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Languages */}
+          <div className="pt-2 flex items-center space-x-3">
+            <Globe size={18} className="text-gray-500" />
+            {(['th', 'en', 'cn'] as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => { setLang(lang); setIsOpen(false); }}
+                className={`px-3 py-1 rounded-md text-sm font-medium border ${
+                  currentLang === lang 
+                    ? 'bg-brand-orange text-white border-brand-orange' 
+                    : 'bg-white text-gray-600 border-gray-300'
+                }`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+        </div>
+      )}
     </nav>
   );
 };

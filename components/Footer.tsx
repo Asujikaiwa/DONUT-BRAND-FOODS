@@ -6,24 +6,47 @@ interface FooterProps {
   t: Translation['contact'];
 }
 
+// สร้าง Custom Icon สำหรับ TikTok และ Line ให้เข้ากับธีมเว็บ
+const TiktokIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3" />
+  </svg>
+);
+
+const LineIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+    <path d="M21.5 10.5C21.5 6.35786 17.2467 3 12 3C6.75329 3 2.5 6.35786 2.5 10.5C2.5 13.9167 4.79326 16.8184 8.08272 17.7508C8.58309 17.893 8.70678 18.2573 8.61899 18.7296C8.54719 19.1158 8.16335 20.8967 8.09355 21.2464C7.99464 21.7423 8.35852 21.8465 8.76106 21.5979C9.20625 21.323 14.1505 18.4239 16.6385 16.2713C19.5935 13.7145 21.5 12.2458 21.5 10.5Z" />
+  </svg>
+);
+
 const Footer: React.FC<FooterProps> = ({ t }) => {
+  // ลิงก์สำหรับ Google Maps (นำทาง)
+  const mapUrl = "https://www.google.com/maps/search/?api=1&query=บริษัท+อธิปพาณิชย์+จำกัด+สมุทรปราการ";
+
   return (
     <footer id="contact" className="bg-brand-dark text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           
-          {/* Brand Info */}
+          {/* Brand Info & Social Links */}
           <div>
             <h3 className="text-2xl font-bold font-display text-brand-yellow mb-4">DONUT BRAND</h3>
             <p className="text-gray-400 mb-6">
               Flavoring your life with quality products.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-gray-700 hover:bg-brand-orange p-2 rounded-full transition text-white">
-                <Facebook size={20} />
+            <div className="flex space-x-3">
+              <a href="https://www.facebook.com/athip.panich.donut/?locale=th_TH" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-blue-600 p-2.5 rounded-full transition text-white tooltip" title="Facebook">
+                <Facebook size={18} />
               </a>
-              <a href="#" className="bg-gray-700 hover:bg-brand-orange p-2 rounded-full transition text-white">
-                <Instagram size={20} />
+              <a href="https://www.instagram.com/don_utbrand/" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-pink-600 p-2.5 rounded-full transition text-white tooltip" title="Instagram">
+                <Instagram size={18} />
+              </a>
+              <a href="https://www.tiktok.com/@donut.athip" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-black p-2.5 rounded-full transition text-white tooltip" title="TikTok">
+                <TiktokIcon size={18} />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-green-500 p-2.5 rounded-full transition text-white tooltip" title="Line">
+                {/* เปลี่ยน "#" เป็นลิงก์ Line ของคุณได้เลยเมื่อได้ Path มาครับ */}
+                <LineIcon size={18} />
               </a>
             </div>
           </div>
@@ -34,27 +57,39 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
               {t.title}
             </h3>
             <div className="space-y-4">
-              <div className="flex items-start">
+              <div className="flex items-start group">
                 <MapPin className="text-brand-orange mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-gray-300">
-                   123/45 Muang District, Samut Prakan, Thailand 10270
-                </span>
+                <a 
+                  href={mapUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 hover:text-brand-yellow transition"
+                  title="คลิกเพื่อนำทางด้วย Google Maps"
+                >
+                   บริษัท อธิปพาณิชย์ จำกัด, HGR5+2PG, Unnamed Road, ตำบล บ้านคลองสวน อำเภอพระสมุทรเจดีย์ สมุทรปราการ 10290
+                </a>
               </div>
               <div className="flex items-center">
                 <Phone className="text-brand-orange mr-3 flex-shrink-0" size={20} />
-                <span className="text-gray-300">012-345-6789</span>
+                <span className="text-gray-300">094 347 6691</span>
               </div>
               <div className="flex items-center">
                 <Mail className="text-brand-orange mr-3 flex-shrink-0" size={20} />
-                <span className="text-gray-300">contact@donutbrand.com</span>
+                <a 
+                  href="mailto:athip_panich@hotmail.com" 
+                  className="text-gray-300 hover:text-brand-yellow transition"
+                  title="คลิกเพื่อส่งอีเมล"
+                >
+                  athip_panich@hotmail.com
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Map (Placeholder) */}
-          <div className="rounded-xl overflow-hidden h-48 bg-gray-600">
+          {/* Map (Embedded Iframe) */}
+          <div className="rounded-xl overflow-hidden h-48 bg-gray-600 shadow-inner">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.9351090332856!2d100.590!3d13.600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDM2JzAwLjAiTiAxMDDCsDM1JzI0LjAiRQ!5e0!3m2!1sen!2sth!4v1633000000000!5m2!1sen!2sth" 
+              src="https://maps.google.com/maps?q=บริษัท%20อธิปพาณิชย์%20จำกัด%20สมุทรปราการ&t=&z=14&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -67,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Donut Brand Co., Ltd. All rights reserved.
+          © {new Date().getFullYear()} Athip Panich Co., Ltd. All rights reserved.
         </div>
       </div>
     </footer>
