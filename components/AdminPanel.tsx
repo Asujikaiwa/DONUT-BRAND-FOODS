@@ -153,6 +153,12 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
     if (!productForm.name?.th || !productForm.category) return alert('กรุณากรอกชื่อและหมวดหมู่');
     if (!productForm.variants || productForm.variants.length === 0) return alert('กรุณาเพิ่มขนาดอย่างน้อย 1 ไซส์');
     
+    // ตรวจสอบข้อมูลก่อนบันทึก: ถ้าใส่ขนาด แต่ไม่ใส่ราคา ให้บังคับราคาเป็น 0 อัตโนมัติ
+    const safeVariants = productForm.variants.map((v: ProductVariant) => ({
+      weight: v.weight,
+      price: v.price || 0 // ถ้า v.price เป็น undefined หรือว่างเปล่า จะกลายเป็น 0
+    }));
+
     setLoading(true);
     try {
       let imageUrl = productForm.image || '';
@@ -161,7 +167,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
       const productData = {
         category: productForm.category,
         name: productForm.name,
-        variants: productForm.variants,
+        variants: safeVariants, // ใช้ variants ที่ตรวจสอบแล้ว
         image: imageUrl,
         isNew: productForm.isNew,
         isBestSeller: productForm.isBestSeller,
@@ -206,14 +212,12 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
     setLoading(true);
     try {
       let finalUrl = newVideoUrl;
-      // ถ้ามีการเลือกไฟล์วิดีโอจากเครื่อง ให้อัปโหลดขึ้น Storage ก่อน
       if (selectedVideoFile) {
         finalUrl = await uploadVideoToStorage(selectedVideoFile);
       }
       
       await addDoc(collection(db, 'hero_slides'), { url: finalUrl, type: 'video', createdAt: new Date() });
       
-      // ล้างค่าฟอร์ม
       setNewVideoUrl('');
       setSelectedVideoFile(null);
       const fileInput = document.getElementById('videoFileInput') as HTMLInputElement;
@@ -372,7 +376,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                       <select className={inputStyle} value={productForm.category} onChange={(e) => setProductForm({...productForm, category: e.target.value})}>
                         <option value="seasoning">ผงปรุงรส</option>
                         <option value="beverage">เครื่องดื่ม</option>
-                        <option value="additives">อื่นๆ</option>
+                        <option value="additives">อื่นๆ (Others)</option>
                       </select>
                     </div>
 
@@ -385,7 +389,8 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                       {productForm.variants?.map((v:any, idx:number) => (
                         <div key={idx} className="flex gap-2 items-center mb-2">
                           <input type="text" placeholder="เช่น 500g" className={`${inputStyle} w-1/2`} value={v.weight} onChange={(e) => handleVariantChange(idx, 'weight', e.target.value)} required />
-                          <input type="number" placeholder="ราคา" className={`${inputStyle} w-1/2`} value={v.price || ''} onChange={(e) => handleVariantChange(idx, 'price', Number(e.target.value))} required />
+                          {/* นำ required ออกจากช่องราคา เพื่อให้ไม่ต้องกรอกก็เซฟได้ */}
+                          <input type="number" placeholder="ราคา (ไม่บังคับ)" className={`${inputStyle} w-1/2`} value={v.price || ''} onChange={(e) => handleVariantChange(idx, 'price', Number(e.target.value))} />
                           {productForm.variants!.length > 1 && (
                              <button type="button" onClick={() => removeVariant(idx)} className="text-red-500 hover:bg-red-50 p-2 rounded-lg transition"><Trash2 size={16} /></button>
                           )}
@@ -537,7 +542,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                       accept="video/mp4,video/webm" 
                       onChange={(e) => {
                         setSelectedVideoFile(e.target.files?.[0] || null);
-                        if (e.target.files?.[0]) setNewVideoUrl(''); // เคลียร์ URL ถ้าเลือกไฟล์
+                        if (e.target.files?.[0]) setNewVideoUrl(''); 
                       }} 
                       className={`${inputStyle} w-full bg-white`} 
                       disabled={!!newVideoUrl}

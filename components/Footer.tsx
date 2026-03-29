@@ -13,7 +13,7 @@ const TiktokIcon = ({ size = 20 }) => (
   </svg>
 );
 
-// สร้าง Custom Icon สำหรับ Line แบบวาดลายเส้น
+// สร้าง Custom Icon สำหรับ Line
 const LineIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21.5 10.5C21.5 6.35786 17.2467 3 12 3C6.75329 3 2.5 6.35786 2.5 10.5C2.5 13.9167 4.79326 16.8184 8.08272 17.7508C8.58309 17.893 8.70678 18.2573 8.61899 18.7296C8.54719 19.1158 8.16335 20.8967 8.09355 21.2464C7.99464 21.7423 8.35852 21.8465 8.76106 21.5979C9.20625 21.323 14.1505 18.4239 16.6385 16.2713C19.5935 13.7145 21.5 12.2458 21.5 10.5Z" />
@@ -61,16 +61,24 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
                   href="https://www.google.com/maps/search/?api=1&query=บริษัท+อธิปพาณิชย์+จำกัด+สมุทรปราการ" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-300 hover:text-brand-yellow transition"
+                  className="text-gray-300 hover:text-brand-yellow transition leading-relaxed"
                 >
                    บริษัท อธิปพาณิชย์ จำกัด, HGR5+2PG, Unnamed Road, ตำบล บ้านคลองสวน อำเภอพระสมุทรเจดีย์ สมุทรปราการ 10290
                 </a>
               </div>
-              <div className="flex items-center">
-                <Phone className="text-brand-orange mr-3 flex-shrink-0" size={20} />
-                <span className="text-gray-300">094 347 6691</span>
+              
+              {/* === เบอร์โทรศัพท์ 3 เบอร์เรียงกัน === */}
+              <div className="flex items-start">
+                <Phone className="text-brand-orange mt-1 mr-3 flex-shrink-0" size={20} />
+                <div className="flex flex-col space-y-1.5">
+                  <a href="tel:0918033478" className="text-gray-300 hover:text-brand-yellow transition">091-803-3478</a>
+                  <a href="tel:0972692898" className="text-gray-300 hover:text-brand-yellow transition">097-269-2898</a>
+                  <a href="tel:0918799922" className="text-gray-300 hover:text-brand-yellow transition">091-879-9922</a>
+                </div>
               </div>
-              <div className="flex items-center">
+              {/* ================================ */}
+
+              <div className="flex items-center mt-2">
                 <Mail className="text-brand-orange mr-3 flex-shrink-0" size={20} />
                 <a href="mailto:athip_panich@hotmail.com" className="text-gray-300 hover:text-brand-yellow transition">
                   athip_panich@hotmail.com
@@ -96,4 +104,5 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
     </footer>
   );
 };
+
 export default Footer;
