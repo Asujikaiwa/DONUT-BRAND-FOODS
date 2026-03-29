@@ -20,7 +20,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         'พร้อมส่งมอบผลิตภัณฑ์คุณภาพสูงถึงมือผู้บริโภค'
       ]
     },
-    products: { title: 'สินค้าของเรา', filterAll: 'ทั้งหมด', filterSeasoning: 'ผงปรุงรส', filterBeverage: 'เครื่องดื่ม', filterAdditives: 'วัตถุดิบ/สารเสริม' },
+    products: { title: 'สินค้าของเรา', filterAll: 'ทั้งหมด', filterSeasoning: 'ผงปรุงรส', filterBeverage: 'ผงเครื่องดื่ม', filterAdditives: 'อื่นๆ' },
     contact: { title: 'ติดต่อเรา', addressLabel: 'ที่อยู่บริษัท', phoneLabel: 'เบอร์โทรศัพท์', emailLabel: 'อีเมล', followUs: 'ติดตามเราได้ที่' },
   },
   en: {
@@ -42,7 +42,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         'Ready to deliver high-quality products to consumers'
       ]
     },
-    products: { title: 'Our Products', filterAll: 'All', filterSeasoning: 'Seasonings', filterBeverage: 'Beverages', filterAdditives: 'Additives' },
+    products: { title: 'Our Products', filterAll: 'All', filterSeasoning: 'Seasonings', filterBeverage: 'beverage powder', filterAdditives: 'Other' },
     contact: { title: 'Contact Us', addressLabel: 'Address', phoneLabel: 'Phone', emailLabel: 'Email', followUs: 'Follow Us' },
   },
   cn: {
@@ -64,7 +64,7 @@ export const TRANSLATIONS: Record<Language, Translation> = {
         '准备向消费者交付高质量产品'
       ]
     },
-    products: { title: '我们的产品', filterAll: '全部', filterSeasoning: '调味料', filterBeverage: '饮料', filterAdditives: '添加剂' },
+    products: { title: '我们的产品', filterAll: '全部', filterSeasoning: '调味料', filterBeverage: '饮料', filterAdditives: '其他' },
     contact: { title: '联系我们', addressLabel: '地址', phoneLabel: '电话', emailLabel: '电子邮件', followUs: '关注我们' },
   },
 };

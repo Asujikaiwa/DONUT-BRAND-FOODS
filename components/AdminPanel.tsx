@@ -372,7 +372,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                       <select className={inputStyle} value={productForm.category} onChange={(e) => setProductForm({...productForm, category: e.target.value})}>
                         <option value="seasoning">ผงปรุงรส</option>
                         <option value="beverage">เครื่องดื่ม</option>
-                        <option value="additives">สารเสริม/วัตถุดิบ</option>
+                        <option value="additives">อื่นๆ</option>
                       </select>
                     </div>
 
