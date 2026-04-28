@@ -36,6 +36,9 @@ export interface Translation {
     home: string;
     products: string;
     contact: string;
+    contactSales: string; // เพิ่ม
+    followUs: string; // เพิ่ม
+    selectLanguage: string; // เพิ่ม
   };
   hero: {
     title: string;
@@ -60,6 +63,7 @@ export interface Translation {
   contact: {
     title: string;
     addressLabel: string;
+    address: string; // เพิ่ม
     phoneLabel: string;
     emailLabel: string;
     followUs: string;

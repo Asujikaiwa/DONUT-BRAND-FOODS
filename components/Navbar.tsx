@@ -95,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               <div className="relative group hidden lg:block">
                 <button className="flex items-center text-gray-700 hover:text-brand-orange font-bold whitespace-nowrap transition py-2">
                   <Phone size={18} className="mr-1.5 text-brand-orange" />
-                  ติดต่อฝ่ายขาย
+                  {t.contactSales}
                 </button>
                 {/* เมนูย่อยเมื่อเอาเมาส์ชี้ */}
                 <div className="absolute top-full left-0 mt-0 w-44 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden flex flex-col z-50">
@@ -140,7 +140,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
 
           {/* เบอร์โทรศัพท์สำหรับ Mobile (แสดง 3 เบอร์) */}
           <div className="px-3 py-3 bg-gray-50 rounded-lg border border-gray-100">
-            <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดต่อฝ่ายขาย</p>
+            <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">{t.contactSales}</p>
             <div className="flex flex-col space-y-3">
               <a href="tel:0918033478" className="flex items-center text-brand-dark hover:text-brand-orange font-bold text-base"><Phone size={18} className="mr-3 text-brand-orange" />091-803-3478</a>
               <a href="tel:0972692898" className="flex items-center text-brand-dark hover:text-brand-orange font-bold text-base"><Phone size={18} className="mr-3 text-brand-orange" />097-269-2898</a>
@@ -150,7 +150,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2 border-t border-gray-100 mt-2">
             <div className="flex-1">
-              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">ติดตามเราได้ที่</p>
+              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">{t.followUs}</p>
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social, index) => (
                   <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className={`text-gray-600 bg-gray-100 p-2.5 rounded-full flex items-center justify-center transition-colors ${social.hoverColor}`}>
@@ -161,7 +161,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
             </div>
 
             <div className="flex-1">
-              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">เลือกภาษา</p>
+              <p className="text-xs text-gray-400 mb-3 font-semibold uppercase">{t.selectLanguage}</p>
               <div className="flex items-center space-x-2">
                 <Globe size={18} className="text-gray-500" />
                 <div className="flex gap-2 w-full">

@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
                   rel="noopener noreferrer" 
                   className="text-gray-300 hover:text-brand-yellow transition leading-relaxed"
                 >
-                   บริษัท อธิปพาณิชย์ จำกัด, HGR5+2PG, Unnamed Road, ตำบล บ้านคลองสวน อำเภอพระสมุทรเจดีย์ สมุทรปราการ 10290
+                   {t.address}
                 </a>
               </div>
               

@@ -2,8 +2,7 @@ import { Language, Product, Translation } from './types';
 
 export const TRANSLATIONS: Record<Language, Translation> = {
   th: {
-    nav: { home: 'หน้าแรก', products: 'สินค้า', contact: 'ติดต่อเรา' },
-    hero: { title: 'รสชาติที่ลงตัว คู่ครัวคุณ', subtitle: 'ผู้ผลิตและจำหน่ายผงปรุงรสและวัตถุเจือปนอาหารคุณภาพสูง ตราโดนัท', cta: 'ดูสินค้าของเรา' },
+nav: { home: 'หน้าแรก', products: 'สินค้า', contact: 'ติดต่อเรา', contactSales: 'ติดต่อฝ่ายขาย', followUs: 'ติดตามเราได้ที่', selectLanguage: 'เลือกภาษา' },    hero: { title: 'รสชาติที่ลงตัว คู่ครัวคุณ', subtitle: 'ผู้ผลิตและจำหน่ายผงปรุงรสและวัตถุเจือปนอาหารคุณภาพสูง ตราโดนัท', cta: 'ดูสินค้าของเรา' },
     about: {
       title: 'ประวัติบริษัท',
       description: 'บริษัท อธิป พาณิชย์ จำกัด ก่อตั้งในนาม คุณคนึงรัตน์ ใจตรง เมื่อปี พศ.2543 ดำเนินธุรกิจเกี่ยวกับผลิตและจำหน่าย“ผงปรุงรส”เพื่อขายให้แก่อุตสาหกรรมขนม ได้แก่ ข้าวเกรียบ ข้าวโพดอบกรอบ เป็นต้น\n\nต่อมาในช่วงปี พศ.2546 คุณคนึงรัตน์ ใจตรง ได้เล็งเห็นถึงการมาของกระแส ชานมไข่มุก จึงได้นำเอาผลิตภัณฑ์ “ครีมเทียม” มาจำหน่ายในช่วงนั้น ทำให้กิจการเริ่มขยับขยาย และเติบโตขึ้นอย่างต่อเนื่อง\n\nจนกระทั้งในปี พศ.2560 จึงจดทะเบียนบริษัท ในนาม “บริษัท อธิป พาณิชย์ จำกัด” จากนั้นทางบริษัทฯ ก็ได้มีการขยับขยายสินค้าออกมามากมาย ทั้งในส่วนของ “เครื่องดื่มชนิดผง” “ผงครีมชีส” ”วัตถุเจือปนอาหาร” และอื่นๆอีกมากมายจนถึงปัจจุบัน',
@@ -21,11 +20,9 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       ]
     },
     products: { title: 'สินค้าของเรา', filterAll: 'ทั้งหมด', filterSeasoning: 'ผงปรุงรส', filterBeverage: 'ผงเครื่องดื่ม', filterAdditives: 'อื่นๆ' },
-    contact: { title: 'ติดต่อเรา', addressLabel: 'ที่อยู่บริษัท', phoneLabel: 'เบอร์โทรศัพท์', emailLabel: 'อีเมล', followUs: 'ติดตามเราได้ที่' },
-  },
+    contact: { title: 'ติดต่อเรา', addressLabel: 'ที่อยู่บริษัท', address: 'บริษัท อธิปพาณิชย์ จำกัด, HGR5+2PG, Unnamed Road, ตำบล บ้านคลองสวน อำเภอพระสมุทรเจดีย์ สมุทรปราการ 10290', phoneLabel: 'เบอร์โทรศัพท์', emailLabel: 'อีเมล', followUs: 'ติดตามเราได้ที่' },  },
   en: {
-    nav: { home: 'Home', products: 'Products', contact: 'Contact' },
-    hero: { title: 'The Perfect Taste for Your Kitchen', subtitle: 'Manufacturer and distributor of high-quality food additives and seasoning powders, Donut Brand.', cta: 'View Products' },
+    nav: { home: 'Home', products: 'Products', contact: 'Contact', contactSales: 'Contact Sales', followUs: 'Follow Us', selectLanguage: 'Select Language' },    hero: { title: 'The Perfect Taste for Your Kitchen', subtitle: 'Manufacturer and distributor of high-quality food additives and seasoning powders, Donut Brand.', cta: 'View Products' },
     about: {
       title: 'Company History',
       description: 'Athip Panich Co., Ltd. was founded by Ms. Kanuengrut Jaitrong in 2000. The business started by manufacturing and distributing "seasoning powders" for the snack industry, such as crackers and crispy corn.\n\nLater, in 2003, seeing the rising trend of bubble tea, Ms. Kanuengrut began selling "non-dairy creamer", which led to continuous business expansion and growth.\n\nEventually, in 2017, the company was officially registered as "Athip Panich Co., Ltd.". Since then, the company has expanded its product lines extensively, including "beverage powders", "cream cheese powders", "food additives", and many others to this day.',
@@ -43,11 +40,9 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       ]
     },
     products: { title: 'Our Products', filterAll: 'All', filterSeasoning: 'Seasonings', filterBeverage: 'beverage powder', filterAdditives: 'Other' },
-    contact: { title: 'Contact Us', addressLabel: 'Address', phoneLabel: 'Phone', emailLabel: 'Email', followUs: 'Follow Us' },
-  },
+    contact: { title: 'Contact Us', addressLabel: 'Address', address: 'Athip Panich Co., Ltd., HGR5+2PG, Unnamed Road, Ban Khlong Suan, Phra Samut Chedi District, Samut Prakan 10290', phoneLabel: 'Phone', emailLabel: 'Email', followUs: 'Follow Us' },  },
   cn: {
-    nav: { home: '首页', products: '产品', contact: '联系我们' },
-    hero: { title: '厨房的完美味道', subtitle: 'Donut 品牌高品质食品添加剂和调味粉的生产商和分销商。', cta: '查看产品' },
+    nav: { home: '首页', products: '产品', contact: '联系我们', contactSales: '联系销售', followUs: '关注我们', selectLanguage: '选择语言' },    hero: { title: '厨房的完美味道', subtitle: 'Donut 品牌高品质食品添加剂和调味粉的生产商和分销商。', cta: '查看产品' },
     about: {
       title: '公司历史',
       description: 'Athip Panich 有限公司由 Kanuengrut Jaitrong 女士于 2000 年创立。该业务最初为休闲食品行业（如饼干和脆玉米）生产和销售“调味粉”。\n\n后来，在 2003 年，看到珍珠奶茶的上升趋势，Kanuengrut 女士开始销售“植脂末”，这导致业务不断扩张和增长。\n\n最终，在 2017 年，公司正式注册为“Athip Panich 有限公司”。从那时起，公司广泛扩展了其产品线，包括“饮料粉”、“奶油芝士粉”、“食品添加剂”以及至今的许多其他产品。',
@@ -65,6 +60,5 @@ export const TRANSLATIONS: Record<Language, Translation> = {
       ]
     },
     products: { title: '我们的产品', filterAll: '全部', filterSeasoning: '调味料', filterBeverage: '饮料', filterAdditives: '其他' },
-    contact: { title: '联系我们', addressLabel: '地址', phoneLabel: '电话', emailLabel: '电子邮件', followUs: '关注我们' },
-  },
+    contact: { title: '联系我们', addressLabel: '地址', address: 'Athip Panich 有限公司, HGR5+2PG, Unnamed Road, Ban Khlong Suan, Phra Samut Chedi 县, 北榄府 10290', phoneLabel: '电话', emailLabel: '电子邮件', followUs: '关注我们' },  },
 };
