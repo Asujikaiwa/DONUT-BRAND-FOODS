@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://athip-panich.com/sitemap.xml
