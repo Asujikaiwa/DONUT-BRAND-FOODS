@@ -72,6 +72,7 @@ export interface Translation {
 
 export interface HeroSlide {
   id: string;
-  url: string; // เก็บ URL ของวิดีโอ
+  url: string; // เก็บ URL ของวิดีโอ (รองรับทั้ง URL เต็ม และ path ในเครื่อง เช่น /videos/hero-1.mp4)
   type: 'video'; // เผื่ออนาคตอยากใส่ 'image'
+  poster?: string; // รูปพื้นหลังระหว่างรอวิดีโอ / ตอนวิดีโอเล่นไม่ได้
 }

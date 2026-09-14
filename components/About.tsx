@@ -39,7 +39,9 @@ const About: React.FC<AboutProps> = ({ t }) => {
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
           <div className="w-full lg:w-5/12 flex justify-center order-2 lg:order-1">
             <div className="relative rounded-full overflow-hidden shadow-xl border-8 border-white aspect-square w-64 md:w-80 lg:w-full max-w-md bg-white">
-              <img 
+              <img
+                loading="lazy"
+                decoding="async"
                 src="/PictureProduct/Other/Logo/logo.jpg" 
                 alt="Athip Panich Logo" 
                 className="w-full h-full object-contain p-6"
@@ -82,7 +84,9 @@ const About: React.FC<AboutProps> = ({ t }) => {
         <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 mb-16 border border-gray-100">
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="w-full md:w-2/5">
-              <img 
+              <img
+                loading="lazy"
+                decoding="async"
                 src="/PictureProduct/Other/About/CODEX_HACCP&GHPS.jpg" 
                 alt="CODEX HACCP & GHPs Certificate" 
                 className="w-full h-auto rounded-xl shadow-md border border-gray-200 hover:scale-105 transition-transform duration-300"
@@ -121,7 +125,9 @@ const About: React.FC<AboutProps> = ({ t }) => {
             {/* ฝั่งซ้าย: รูปภาพ */}
             <div className="w-full md:w-1/2 relative aspect-[4/3] md:aspect-auto md:h-[450px] bg-gray-100 overflow-hidden">
               {facilityImages.map((src, index) => (
-                <img 
+                <img
+                loading="lazy"
+                decoding="async"
                   key={index}
                   src={src} 
                   alt={`Facility ${index + 1}`}

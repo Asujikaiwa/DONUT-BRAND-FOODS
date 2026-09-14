@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* ===== Brand theme (migrated from the old inline tailwind.config in index.html) ===== */
+@theme {
+  --color-brand-orange: #FF8C00;
+  --color-brand-yellow: #FFD700;
+  --color-brand-cream: #FFF8E1;
+  --color-brand-dark: #2D3436;
+
+  --font-sans: "Sarabun", sans-serif;
+  --font-display: "Kanit", sans-serif;
+}
+
+/* Base typography (was an inline <style> block in index.html) */
+body {
+  font-family: var(--font-sans);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom utility used by the promotion banner slider in ProductList.tsx */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}

@@ -30,7 +30,9 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
           )}
         </div>
 
-        <img 
+        <img
+                loading="lazy"
+                decoding="async"
           src={product.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
           alt={product.name[currentLang]} 
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -151,7 +153,9 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
             <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scrollbar">
               {banners.map((b) => (
                 <div key={b.id} className="snap-center flex-shrink-0 w-[85%] md:w-[60%] lg:w-[45%]">
-                  <img 
+                  <img
+                loading="lazy"
+                decoding="async"
                     src={b.url} 
                     alt="Promotion Banner" 
                     className="w-full h-auto aspect-[16/9] object-cover rounded-2xl shadow-lg border border-gray-200"
