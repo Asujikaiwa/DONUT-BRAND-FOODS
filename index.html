@@ -17,10 +17,9 @@
     <meta property="og:description" content="จำหน่ายผงปรุงรสคุณภาพสูง ผงชีส บาร์บีคิว ปาปริก้า และผงเครื่องดื่มต่างๆ มาตรฐานส่งออก">
     <meta property="og:image" content="https://athip-panich.com/PictureProduct/Other/Logo/logo.jpg">
 
-    <link rel="alternate" hreflang="th" href="https://athip-panich.com/" />
-    <link rel="alternate" hreflang="en" href="https://athip-panich.com/" />
-    <link rel="alternate" hreflang="zh" href="https://athip-panich.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://athip-panich.com/" />
+    <!-- hreflang ถูกถอดออก: เว็บมี URL เดียว (เปลี่ยนภาษาในหน้าเดียวด้วย JS)
+         การประกาศ hreflang th/en/zh ที่ชี้ URL เดียวกันทั้งหมดถือว่าไม่ถูกต้อง
+         ถ้าในอนาคตทำหน้าแยกภาษาจริง (/en/, /zh/) ค่อยใส่กลับพร้อม x-default -->
 
     <link rel="icon" type="image/jpeg" href="/PictureProduct/Other/Logo/logo.jpg" />
 
@@ -47,6 +46,7 @@
       "image": "https://athip-panich.com/PictureProduct/Other/Logo/logo.jpg",
       "description": "ผู้ผลิตและจำหน่ายผงปรุงรส ตราโดนัท (Donut Brand) คุณภาพสูง มาตรฐาน CODEX HACCP & GHPs เช่น ผงชีส บาร์บีคิว ปาปริก้า ผงเครื่องดื่ม และวัตถุเจือปนอาหาร",
       "foundingDate": "2000",
+      "founder": { "@type": "Person", "name": "คนึงรัตน์ ใจตรง" },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "HGR5+2PG, Unnamed Road, ตำบลบ้านคลองสวน",
@@ -54,7 +54,1296 @@
         "addressRegion": "สมุทรปราการ",
         "postalCode": "10290",
         "addressCountry": "TH"
+      },
+      "telephone": "+66-91-803-3478",
+      "email": "athip_panich@hotmail.com",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+66-91-803-3478",
+        "email": "athip_panich@hotmail.com",
+        "areaServed": "TH",
+        "availableLanguage": ["th", "en", "zh"]
+      }],
+      "sameAs": [
+        "https://www.facebook.com/athip.panich.donut/",
+        "https://www.instagram.com/don_utbrand/",
+        "https://www.tiktok.com/@donut.athip"
+      ],
+      "knowsAbout": [
+        "ผงปรุงรส", "ผงชีส", "ผงบาร์บีคิว", "ผงปาปริก้า",
+        "เครื่องดื่มชนิดผง", "วัตถุเจือปนอาหาร",
+        "รับผลิตผงปรุงรส OEM", "CODEX HACCP", "GHPs"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "ตราโดนัท",
+        "alternateName": ["Donut Brand", "甜甜圈品牌"],
+        "logo": "https://athip-panich.com/PictureProduct/Other/Logo/logo.jpg"
       }
+    }
+    </script>
+
+    <!-- Structured data: รายการสินค้าทั้งหมด (Product / ItemList) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "สินค้าทั้งหมด ตราโดนัท (Donut Brand)",
+      "description": "รายการผงปรุงรส เครื่องดื่มชนิดผง และวัตถุเจือปนอาหาร ภายใต้แบรนด์ตราโดนัท โดยบริษัท อธิปพาณิชย์ จำกัด",
+      "numberOfItems": 32,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "ผงชาไทย (Thai Tea Powder)",
+            "alternateName": [
+              "Thai Tea Powder",
+              "泰式茶粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/ThaiTea200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงชาไทย ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสชีส (สูตร S) (Cheese Seasoning (S))",
+            "alternateName": [
+              "Cheese Seasoning (S)",
+              "芝士调料 (S)"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/CheeseS500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสชีส (สูตร S) ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "ผงนมเย็น (Pink Milk (Nom Yen))",
+            "alternateName": [
+              "Pink Milk (Nom Yen)",
+              "粉红奶粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Nomyen200G.png",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงนมเย็น ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสปลาหมึกย่าง (Grilled Squid Seasoning)",
+            "alternateName": [
+              "Grilled Squid Seasoning",
+              "烤鱿鱼调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/GrilledSquid500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสปลาหมึกย่าง ขนาดบรรจุ 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสสาหร่าย (Seaweed Seasoning)",
+            "alternateName": [
+              "Seaweed Seasoning",
+              "海苔调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Seaweed500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสสาหร่าย ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "name": "ผงเผือกหอม (Taro Powder)",
+            "alternateName": [
+              "Taro Powder",
+              "香芋粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/TaroBubble200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงเผือกหอม ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสบาร์บีคิว (BBQ Seasoning)",
+            "alternateName": [
+              "BBQ Seasoning",
+              "烧烤调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/BBQ500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสบาร์บีคิว ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Product",
+            "name": "ผงช็อกโกแลต (Chocolate Powder)",
+            "alternateName": [
+              "Chocolate Powder",
+              "巧克力粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Chocolate200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงช็อกโกแลต ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Product",
+            "name": "นมผง (Milk Powder)",
+            "alternateName": [
+              "Milk Powder",
+              "奶粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Milk1000G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท นมผง ขนาดบรรจุ 200g / 1000g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 1000g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Product",
+            "name": "ผงซีฟู้ดสไปซี่ (Spicy Seafood Seasoning)",
+            "alternateName": [
+              "Spicy Seafood Seasoning",
+              "香辣海鲜调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/SpicySeafood200G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงซีฟู้ดสไปซี่ ขนาดบรรจุ 50g / 100g / 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "50g / 100g / 200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสข้าวโพด (Corn Seasoning)",
+            "alternateName": [
+              "Corn Seasoning",
+              "玉米调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Corn500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสข้าวโพด ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Product",
+            "name": "ผงชาเขียวมัทฉะ (Matcha Green Tea)",
+            "alternateName": [
+              "Matcha Green Tea",
+              "抹茶粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงชาเขียวมัทฉะ ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสวิงซ์แซ่บ (Wing Zab Seasoning)",
+            "alternateName": [
+              "Wing Zab Seasoning",
+              "香辣鸡翅调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/WingZab500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสวิงซ์แซ่บ ขนาดบรรจุ 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสพริกชีส (Chilli Cheese Seasoning)",
+            "alternateName": [
+              "Chilli Cheese Seasoning",
+              "辣椒芝士调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/ChilliCheese500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสพริกชีส ขนาดบรรจุ 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Product",
+            "name": "ผงซาวครีมและหัวหอม (Sour Cream & Onion)",
+            "alternateName": [
+              "Sour Cream & Onion",
+              "酸奶油洋葱"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/SourCreamAndOnion500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงซาวครีมและหัวหอม ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสหม่าล่า (Mhala Seasoning)",
+            "alternateName": [
+              "Mhala Seasoning",
+              "麻辣调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Mhala500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสหม่าล่า ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Product",
+            "name": "ผงแคนตาลูป (Cantaloupe Powder)",
+            "alternateName": [
+              "Cantaloupe Powder",
+              "哈密瓜粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Cantaloupe200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงแคนตาลูป ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสลาบ (Larb Seasoning)",
+            "alternateName": [
+              "Larb Seasoning",
+              "泰式凉拌调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Larb500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสลาบ ขนาดบรรจุ 100g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสชีส (Cheese Seasoning)",
+            "alternateName": [
+              "Cheese Seasoning",
+              "芝士调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Cheese500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสชีส ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสแซ่บซี๊ด (Zab Zeed Seasoning)",
+            "alternateName": [
+              "Zab Zeed Seasoning",
+              "极辣调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/ZabZeed500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสแซ่บซี๊ด ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Product",
+            "name": "ผงฮอทแอนด์สไปซี่ (Hot & Spicy Seasoning)",
+            "alternateName": [
+              "Hot & Spicy Seasoning",
+              "香辣调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Hot&spicy500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงฮอทแอนด์สไปซี่ ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสปาปริก้า (Paprika Seasoning)",
+            "alternateName": [
+              "Paprika Seasoning",
+              "红椒调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Paprika500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสปาปริก้า ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Product",
+            "name": "ผงชานมไข่มุก (Bubble Tea Powder)",
+            "alternateName": [
+              "Bubble Tea Powder",
+              "珍珠奶茶粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/BubbleTea200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงชานมไข่มุก ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Product",
+            "name": "ผงมะพร้าว (Coconut Powder)",
+            "alternateName": [
+              "Coconut Powder",
+              "椰子粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Coconut200G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงมะพร้าว ขนาดบรรจุ 200g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสต้มยำ (Tom Yum Seasoning)",
+            "alternateName": [
+              "Tom Yum Seasoning",
+              "冬阴功调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/TomYum500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสต้มยำ ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสไข่เค็ม (Salted Egg Seasoning)",
+            "alternateName": [
+              "Salted Egg Seasoning",
+              "咸蛋黄调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/SaltedEgg500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสไข่เค็ม ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสกุ้งย่าง (Grilled Shrimp Seasoning)",
+            "alternateName": [
+              "Grilled Shrimp Seasoning",
+              "烤虾调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/GrillShrimp500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสกุ้งย่าง ขนาดบรรจุ 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสมีตตี้ชีส (Meaty Cheese Seasoning)",
+            "alternateName": [
+              "Meaty Cheese Seasoning",
+              "肉香芝士调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/MeatyCheese500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสมีตตี้ชีส ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "item": {
+            "@type": "Product",
+            "name": "กรดมะนาว (Citric Acid) (Citric Acid)",
+            "alternateName": [
+              "Citric Acid",
+              "柠檬酸"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/Other/CitricAcid1000G.jpeg",
+            "description": "วัตถุเจือปนอาหาร ตราโดนัท กรดมะนาว (Citric Acid) ขนาดบรรจุ 500g / 1000g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "วัตถุเจือปนอาหาร",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "500g / 1000g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "วัตถุเจือปนอาหาร / Food Additives"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "item": {
+            "@type": "Product",
+            "name": "ผงโกโก้ (Cocoa Powder)",
+            "alternateName": [
+              "Cocoa Powder",
+              "可可粉"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/WaterPowder/Cocoa120G.jpeg",
+            "description": "เครื่องดื่มชนิดผง ตราโดนัท ผงโกโก้ ขนาดบรรจุ 120g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "เครื่องดื่มชนิดผง",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "120g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "เครื่องดื่มชนิดผง / Beverage Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสพิซซ่า (Pizza Seasoning)",
+            "alternateName": [
+              "Pizza Seasoning",
+              "披萨调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/Pizza500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสพิซซ่า ขนาดบรรจุ 100g / 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "100g / 200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "item": {
+            "@type": "Product",
+            "name": "ผงปรุงรสชีสนม (Milk Cheese Seasoning)",
+            "alternateName": [
+              "Milk Cheese Seasoning",
+              "牛奶芝士调料"
+            ],
+            "image": "https://athip-panich.com/PictureProduct/FoodPowder/MilkCheese500G.jpeg",
+            "description": "ผงปรุงรส ตราโดนัท ผงปรุงรสชีสนม ขนาดบรรจุ 200g / 500g ผลิตโดย บริษัท อธิปพาณิชย์ จำกัด โรงงานมาตรฐาน CODEX HACCP และ GHPs",
+            "category": "ผงปรุงรส",
+            "brand": {
+              "@type": "Brand",
+              "name": "ตราโดนัท (Donut Brand)"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "บริษัท อธิปพาณิชย์ จำกัด",
+              "url": "https://athip-panich.com/"
+            },
+            "countryOfOrigin": "TH",
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "ขนาดบรรจุ",
+                "value": "200g / 500g"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "หมวดสินค้า",
+                "value": "ผงปรุงรส / Seasoning Powder"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured data: คำถามที่พบบ่อย (FAQPage) - ช่วยให้ Google และ AI ดึงไปตอบโดยตรง -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ผงปรุงรสตราโดนัท ผลิตโดยบริษัทอะไร",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ผงปรุงรสตราโดนัท (Donut Brand) ผลิตและจำหน่ายโดย บริษัท อธิปพาณิชย์ จำกัด (Athip Panich Co., Ltd.) ก่อตั้งเมื่อ พ.ศ. 2543 โดยคุณคนึงรัตน์ ใจตรง และจดทะเบียนเป็นบริษัทเมื่อ พ.ศ. 2560 โรงงานตั้งอยู่ที่อำเภอพระสมุทรเจดีย์ จังหวัดสมุทรปราการ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ผงปรุงรสตราโดนัท ได้รับการรับรองมาตรฐานอะไรบ้าง",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "โรงงานของบริษัท อธิปพาณิชย์ จำกัด ได้รับการรับรองระบบคุณภาพมาตรฐานสากล CODEX HACCP และ GHPs (Good Hygiene Practices) ครอบคลุมตั้งแต่การคัดสรรวัตถุดิบ การควบคุมการผลิต ไปจนถึงการจัดเก็บและส่งมอบ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ตราโดนัท มีสินค้าอะไรบ้าง",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ปัจจุบันมีสินค้า 32 รายการ แบ่งเป็น 3 หมวด คือ ผงปรุงรส 21 รายการ (เช่น ผงชีส บาร์บีคิว ปาปริก้า ต้มยำ ลาบ หม่าล่า ไข่เค็ม พิซซ่า สาหร่าย ซาวครีมและหัวหอม), เครื่องดื่มชนิดผง 10 รายการ (เช่น ชาไทย ชาเขียวมัทฉะ ชานมไข่มุก โกโก้ ช็อกโกแลต นมผง เผือก มะพร้าว แคนตาลูป นมเย็น) และวัตถุเจือปนอาหาร ได้แก่ กรดมะนาว (Citric Acid)"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ผงปรุงรสตราโดนัท มีขนาดบรรจุอะไรบ้าง",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ขนาดบรรจุขึ้นอยู่กับแต่ละรายการ โดยทั่วไปผงปรุงรสมีขนาด 100 กรัม, 200 กรัม และ 500 กรัม บางรายการมีขนาด 50 กรัม ส่วนเครื่องดื่มชนิดผงส่วนใหญ่ขนาด 200 กรัม และมีบางรายการขนาด 120 กรัม หรือ 1,000 กรัม สำหรับกรดมะนาวมีขนาด 500 กรัม และ 1,000 กรัม"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ผงปรุงรสตราโดนัท ใช้กับอาหารอะไรได้บ้าง",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ผงปรุงรสตราโดนัทเหมาะสำหรับโรยหรือคลุกอาหารทอดและขนมขบเคี้ยว เช่น เฟรนช์ฟรายส์ ไก่ทอด ป๊อปคอร์น มันฝรั่งทอด ข้าวเกรียบ และข้าวโพดอบกรอบ ส่วนเครื่องดื่มชนิดผงใช้ชงเครื่องดื่มสำหรับร้านชานม คาเฟ่ และอุตสาหกรรมเครื่องดื่ม"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "บริษัท อธิปพาณิชย์ จำกัด รับผลิตสินค้า OEM ตามสูตรลูกค้าหรือไม่",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "บริษัทรับผลิตผงปรุงรสแบบ OEM ตามสูตรของลูกค้า สามารถติดต่อฝ่ายขายเพื่อสอบถามรายละเอียด เงื่อนไข และขอใบเสนอราคาได้ที่โทร 091-803-3478, 097-269-2898, 091-879-9922 หรืออีเมล athip_panich@hotmail.com"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "สั่งซื้อผงปรุงรสตราโดนัท และติดต่อบริษัทได้ทางไหน",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ติดต่อฝ่ายขายได้ที่โทร 091-803-3478, 097-269-2898, 091-879-9922 อีเมล athip_panich@hotmail.com หรือติดตามผ่านช่องทางออนไลน์ Facebook (athip.panich.donut), Instagram (don_utbrand) และ TikTok (donut.athip) โรงงานตั้งอยู่ที่ตำบลบ้านคลองสวน อำเภอพระสมุทรเจดีย์ จังหวัดสมุทรปราการ 10290"
+          }
+        }
+      ]
     }
     </script>
   </head>

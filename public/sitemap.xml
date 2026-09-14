@@ -1,137 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
- 
+
   <url>
     <loc>https://athip-panich.com/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <xhtml:link rel="alternate" hreflang="th" href="https://athip-panich.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://athip-panich.com/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://athip-panich.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://athip-panich.com/"/>
- 
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeBBQ.jpeg</image:loc>
-      <image:title>ผงปรุงรสบาร์บีคิว | BBQ Seasoning Powder | 烧烤调味粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeCheese.jpeg</image:loc>
-      <image:title>ผงชีส | Cheese Powder | 奶酪粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeChilliCheese.jpeg</image:loc>
-      <image:title>ผงชีสพริก | Chilli Cheese Powder | 辣椒奶酪粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeChocolate.jpeg</image:loc>
-      <image:title>ผงช็อกโกแลต | Chocolate Powder | 巧克力粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeCorn.jpeg</image:loc>
-      <image:title>ผงข้าวโพด | Corn Powder | 玉米粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeGrilledSquid.jpeg</image:loc>
-      <image:title>ผงหมึกย่าง | Grilled Squid Powder | 烤鱿鱼粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeGrillShrimp.jpeg</image:loc>
-      <image:title>ผงกุ้งย่าง | Grilled Shrimp Powder | 烤虾粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeHot&amp;spicy.jpeg</image:loc>
-      <image:title>ผงรสเผ็ด | Hot and Spicy Powder | 辣味粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeLarb.jpeg</image:loc>
-      <image:title>ผงลาบ | Larb Seasoning Powder | 泰式辣肉末粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeMeatyCheese.jpeg</image:loc>
-      <image:title>ผงชีสเนื้อ | Meaty Cheese Powder | 肉味奶酪粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizePaprika.jpeg</image:loc>
-      <image:title>ผงพาพริก้า | Paprika Powder | 红椒粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizePizza.jpeg</image:loc>
-      <image:title>ผงพิซซ่า | Pizza Powder | 披萨粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeSaltedEgg.jpeg</image:loc>
-      <image:title>ผงไข่เค็ม | Salted Egg Powder | 咸蛋粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeSeaweed.jpeg</image:loc>
-      <image:title>ผงสาหร่าย | Seaweed Powder | 海苔粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeSourCreamAndOnion.jpeg</image:loc>
-      <image:title>ผงซาวครีมหัวหอม | Sour Cream and Onion Powder | 酸奶油洋葱粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeSpicySeafood.jpeg</image:loc>
-      <image:title>ผงซีฟู้ดเผ็ด | Spicy Seafood Powder | 香辣海鲜粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeWingZab.jpeg</image:loc>
-      <image:title>ผงวิงซ์แซ่บ | Wing Zab Powder | 辣鸡翅粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/AllSizeZabZeed.jpeg</image:loc>
-      <image:title>ผงแซ่บซี้ด | Zab Zeed Powder | 香辣调味粉</image:title>
-    </image:image>
- 
+
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/ThaiTea200G.jpeg</image:loc>
-      <image:title>ผงชาไทย | Thai Tea Powder | 泰式奶茶粉</image:title>
+      <image:title>ผงชาไทย | Thai Tea Powder | 泰式茶粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/BubbleTea200G.jpeg</image:loc>
-      <image:title>ผงชานมไต้หวัน | Bubble Tea Powder | 珍珠奶茶粉</image:title>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/CheeseS500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสชีส (สูตร S) | Cheese Seasoning (S) | 芝士调料 (S)</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg</image:loc>
-      <image:title>ผงชาเขียวมัทฉะ | Matcha Bubble Tea Powder | 抹茶珍珠奶茶粉</image:title>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Nomyen200G.png</image:loc>
+      <image:title>ผงนมเย็น | Pink Milk (Nom Yen) | 粉红奶粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/GrilledSquid500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสปลาหมึกย่าง | Grilled Squid Seasoning | 烤鱿鱼调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Seaweed500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสสาหร่าย | Seaweed Seasoning | 海苔调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/TaroBubble200G.jpeg</image:loc>
-      <image:title>ผงเผือก | Taro Bubble Tea Powder | 芋头珍珠奶茶粉</image:title>
+      <image:title>ผงเผือกหอม | Taro Powder | 香芋粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Milk200G.jpeg</image:loc>
-      <image:title>ผงนมสด | Milk Powder | 奶粉</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Cocoa120G.jpeg</image:loc>
-      <image:title>ผงโกโก้ | Cocoa Powder | 可可粉</image:title>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/BBQ500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสบาร์บีคิว | BBQ Seasoning | 烧烤调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Chocolate200G.jpeg</image:loc>
-      <image:title>ผงช็อกโกแลต | Chocolate Drink Powder | 巧克力饮品粉</image:title>
+      <image:title>ผงช็อกโกแลต | Chocolate Powder | 巧克力粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Coconut200G.jpeg</image:loc>
-      <image:title>ผงมะพร้าว | Coconut Powder | 椰子粉</image:title>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Milk1000G.jpeg</image:loc>
+      <image:title>นมผง | Milk Powder | 奶粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g / 1000g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/SpicySeafood200G.jpeg</image:loc>
+      <image:title>ผงซีฟู้ดสไปซี่ | Spicy Seafood Seasoning | 香辣海鲜调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 50g / 100g / 200g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Corn500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสข้าวโพด | Corn Seasoning | 玉米调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg</image:loc>
+      <image:title>ผงชาเขียวมัทฉะ | Matcha Green Tea | 抹茶粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/WingZab500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสวิงซ์แซ่บ | Wing Zab Seasoning | 香辣鸡翅调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/ChilliCheese500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสพริกชีส | Chilli Cheese Seasoning | 辣椒芝士调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/SourCreamAndOnion500G.jpeg</image:loc>
+      <image:title>ผงซาวครีมและหัวหอม | Sour Cream &amp; Onion | 酸奶油洋葱</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Mhala500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสหม่าล่า | Mhala Seasoning | 麻辣调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Cantaloupe200G.jpeg</image:loc>
       <image:title>ผงแคนตาลูป | Cantaloupe Powder | 哈密瓜粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
     </image:image>
- 
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Larb500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสลาบ | Larb Seasoning | 泰式凉拌调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Cheese500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสชีส | Cheese Seasoning | 芝士调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/ZabZeed500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสแซ่บซี๊ด | Zab Zeed Seasoning | 极辣调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Hot&amp;spicy500G.jpeg</image:loc>
+      <image:title>ผงฮอทแอนด์สไปซี่ | Hot &amp; Spicy Seasoning | 香辣调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Paprika500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสปาปริก้า | Paprika Seasoning | 红椒调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/BubbleTea200G.jpeg</image:loc>
+      <image:title>ผงชานมไข่มุก | Bubble Tea Powder | 珍珠奶茶粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Coconut200G.jpeg</image:loc>
+      <image:title>ผงมะพร้าว | Coconut Powder | 椰子粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 200g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/TomYum500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสต้มยำ | Tom Yum Seasoning | 冬阴功调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/SaltedEgg500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสไข่เค็ม | Salted Egg Seasoning | 咸蛋黄调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/GrillShrimp500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสกุ้งย่าง | Grilled Shrimp Seasoning | 烤虾调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/MeatyCheese500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสมีตตี้ชีส | Meaty Cheese Seasoning | 肉香芝士调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/CitricAcid1000G.jpeg</image:loc>
+      <image:title>กรดมะนาว (Citric Acid) | Citric Acid | 柠檬酸</image:title>
+      <image:caption>วัตถุเจือปนอาหาร ตราโดนัท ขนาด 500g / 1000g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/WaterPowder/Cocoa120G.jpeg</image:loc>
+      <image:title>ผงโกโก้ | Cocoa Powder | 可可粉</image:title>
+      <image:caption>เครื่องดื่มชนิดผง ตราโดนัท ขนาด 120g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/Pizza500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสพิซซ่า | Pizza Seasoning | 披萨调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 100g / 200g / 500g</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/FoodPowder/MilkCheese500G.jpeg</image:loc>
+      <image:title>ผงปรุงรสชีสนม | Milk Cheese Seasoning | 牛奶芝士调料</image:title>
+      <image:caption>ผงปรุงรส ตราโดนัท ขนาด 200g / 500g</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/Other/Logo/logo.jpg</image:loc>
-      <image:title>โลโก้ ตราโดนัท อธิปพาณิชย์ | Donut Brand Logo | 甜甜圈品牌标志</image:title>
+      <image:title>โลโก้ ตราโดนัท | Donut Brand Logo | 甜甜圈品牌标志</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/CODEX_HACCP&amp;GHPS.jpg</image:loc>
+      <image:title>ใบรับรองมาตรฐาน CODEX HACCP &amp; GHPs | CODEX HACCP &amp; GHPs Certificate | CODEX HACCP 认证</image:title>
     </image:image>
     <image:image>
       <image:loc>https://athip-panich.com/PictureProduct/Other/NewPictureProduct/3_flavors_Cheese_Paprika_BBQ.jpg</image:loc>
-      <image:title>ผงปรุงรส 3 รสชาติ ชีส ปาปริก้า บาร์บีคิว | 3 Flavors Cheese Paprika BBQ | 三种口味奶酪辣椒烧烤</image:title>
+      <image:title>ผงปรุงรส 3 รสชาติ ชีส ปาปริก้า บาร์บีคิว | 3 Flavors: Cheese, Paprika, BBQ | 三种口味</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_1.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (1) | Donut Brand Factory (1) | 甜甜圈品牌工厂 (1)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_2.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (2) | Donut Brand Factory (2) | 甜甜圈品牌工厂 (2)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_3.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (3) | Donut Brand Factory (3) | 甜甜圈品牌工厂 (3)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_4.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (4) | Donut Brand Factory (4) | 甜甜圈品牌工厂 (4)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_5.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (5) | Donut Brand Factory (5) | 甜甜圈品牌工厂 (5)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_6.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (6) | Donut Brand Factory (6) | 甜甜圈品牌工厂 (6)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://athip-panich.com/PictureProduct/Other/About/LINE_ALBUM_Information_260224_7.jpg</image:loc>
+      <image:title>โรงงานผลิตผงปรุงรส ตราโดนัท (7) | Donut Brand Factory (7) | 甜甜圈品牌工厂 (7)</image:title>
     </image:image>
   </url>
- 
+
 </urlset>
