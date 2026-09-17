@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Translation, Product, Language } from '../types';
 import { db } from '../firebase'; 
-import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { Search, ChevronDown, Percent } from 'lucide-react';
+import { PAGE_TEXT } from '../constants';
+import { productPath } from '../routes';
 
 interface ProductListProps {
   t: Translation['products'];
   currentLang: Language;
+  /** สินค้าที่มี slug แล้ว (ส่งมาจาก App ซึ่งดึงจาก Firestore / ข้อมูลที่ prerender ไว้) */
+  products: (Product & { slug: string })[];
+  loading: boolean;
+  /** ใช้ในหน้าหมวด: แสดงเฉพาะหมวดนี้ ซ่อนปุ่มกรอง และแสดงสินค้าทั้งหมดในหมวด */
+  fixedCategory?: string;
+  title?: string;
+  showBanners?: boolean;
 }
 
-const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ product, currentLang }) => {  const variants = product.variants && product.variants.length > 0 
+export const ProductCard: React.FC<{ product: Product & { slug: string }, currentLang: Language }> = ({ product, currentLang }) => {
+  const ui = PAGE_TEXT[currentLang].ui;
+  const href = productPath(currentLang, product.slug);
+  const name = product.name[currentLang] || product.name.th;  const variants = product.variants && product.variants.length > 0 
     ? product.variants 
     : (product.weight ? [{ weight: product.weight, price: product.price || 0 }] : []);
   
@@ -30,26 +42,28 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
           )}
         </div>
 
-        <img
+        <a href={href} aria-label={name} className="block w-full h-full">
+          <img
                 loading="lazy"
                 decoding="async"
-          src={product.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
-          alt={product.name[currentLang]} 
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-        />
-        
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-          <span className="text-white font-bold border-2 border-white px-4 py-2 rounded-full">
-            ดูรายละเอียด
-          </span>
-        </div>
+            src={product.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
+            alt={name} 
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          />
+          
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+            <span className="text-white font-bold border-2 border-white px-4 py-2 rounded-full">
+              {ui.viewDetails}
+            </span>
+          </div>
+        </a>
       </div>
 
       {/* ข้อมูลสินค้า */}
       <div className="p-4 text-center flex flex-col flex-1 justify-between">
         <div>
           <h3 className="text-sm sm:text-lg font-bold text-gray-800 mb-3 font-display min-h-[3rem] flex items-center justify-center line-clamp-2">
-            {product.name[currentLang]}
+            <a href={href} className="hover:text-brand-orange transition">{name}</a>
           </h3>
           
           {/* ตัวเลือกขนาด */}
@@ -70,7 +84,7 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
               ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-400 mb-3">ไม่ระบุขนาด</p>
+            <p className="text-xs text-gray-400 mb-3">{ui.notSpecified}</p>
           )}
         </div>
 
@@ -81,7 +95,7 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
             </p>
           ) : (
             <p className="text-gray-500 text-sm font-medium bg-gray-100 py-1 rounded-md">
-              ติดต่อสอบถามราคา
+              {ui.contactForPrice}
             </p>
           )}
         </div>
@@ -90,41 +104,38 @@ const ProductCard: React.FC<{ product: Product, currentLang: Language }> = ({ pr
   );
 };
 
-const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
-  const [filter, setFilter] = useState('all');
+const ProductList: React.FC<ProductListProps> = ({ t, currentLang, products, loading, fixedCategory, title, showBanners = true }) => {
+  const ui = PAGE_TEXT[currentLang].ui;
+  // หน้าหมวดแสดงสินค้าครบทุกตัว (ให้ Google เห็นลิงก์ครบ) / หน้าแรกแสดงทีละ 12
+  const pageSize = fixedCategory ? 1000 : 12;
+  const [filter, setFilter] = useState(fixedCategory || 'all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [products, setProducts] = useState<Product[]>([]);
   const [banners, setBanners] = useState<any[]>([]); // สำหรับเก็บรูปโปรโมชั่น
-  const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(12);
+  const [visibleCount, setVisibleCount] = useState(pageSize);
 
   useEffect(() => {
-    // 1. ดึงข้อมูลสินค้า
-    const qProduct = query(collection(db, 'products'), orderBy('category'));
-    const unsubProduct = onSnapshot(qProduct, (snapshot) => {
-      setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Product[]);
-      setLoading(false);
-    });
-
-    // 2. ดึงข้อมูลแบนเนอร์โปรโมชั่น
+    if (!showBanners) return;
+    // ดึงข้อมูลแบนเนอร์โปรโมชั่น (รายการสินค้าย้ายไปดึงที่ App.tsx แล้ว)
     const qBanner = query(collection(db, 'banners'));
     const unsubBanner = onSnapshot(qBanner, (snapshot) => {
       setBanners(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     });
-
-    return () => { unsubProduct(); unsubBanner(); };
-  }, []);
+    return () => { unsubBanner(); };
+  }, [showBanners]);
 
   useEffect(() => {
-    setVisibleCount(12);
-  }, [filter, searchTerm]);
+    setVisibleCount(pageSize);
+  }, [filter, searchTerm, pageSize]);
 
   // ระบบค้นหาและซ่อนสินค้า
+  const term = searchTerm.toLowerCase();
   const filteredProducts = products.filter(p => {
     if ((p as any).isHidden) return false; 
     const matchCategory = filter === 'all' || p.category === filter;
-    const matchSearch = p.name.th.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                        (p.name.en && p.name.en.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchSearch = !term ||
+                        p.name.th.toLowerCase().includes(term) || 
+                        (p.name.en && p.name.en.toLowerCase().includes(term)) ||
+                        (p.name.cn && p.name.cn.toLowerCase().includes(term));
     return matchCategory && matchSearch;
   });
 
@@ -146,7 +157,7 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
           <div className="mb-16">
             <div className="flex items-center gap-2 mb-6 border-l-4 border-brand-orange pl-3">
               <Percent className="text-brand-orange" size={24} />
-              <h3 className="text-2xl font-bold text-gray-800 font-display">โปรโมชั่นพิเศษ (Promotions)</h3>
+              <h3 className="text-2xl font-bold text-gray-800 font-display">{ui.promotions}</h3>
             </div>
             
             {/* เลื่อนสไลด์รูปแบนเนอร์ */}
@@ -169,7 +180,7 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
 
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 font-display">
-            {t.title}
+            {title || t.title}
           </h2>
           <div className="w-24 h-1 bg-brand-yellow mx-auto mb-8"></div>
           
@@ -177,7 +188,7 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input 
               type="text" 
-              placeholder="ค้นหาสินค้าที่ต้องการ..." 
+              placeholder={ui.searchPlaceholder} 
               className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 shadow-sm focus:ring-2 focus:ring-brand-orange outline-none transition"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -185,7 +196,8 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
           </div>
         </div>
 
-        {/* หมวดหมู่ */}
+        {/* หมวดหมู่ (ซ่อนในหน้าหมวด) */}
+        {!fixedCategory && (
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -201,12 +213,13 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
             </button>
           ))}
         </div>
+        )}
 
         {/* รายการสินค้า */}
-        {loading ? (
+        {loading && products.length === 0 ? (
           <div className="text-center py-20 text-gray-400 flex flex-col items-center">
             <div className="w-10 h-10 border-4 border-gray-200 border-t-brand-orange rounded-full animate-spin mb-4"></div>
-            กำลังโหลดข้อมูล...
+            {ui.loading}
           </div>
         ) : (
           <>
@@ -218,17 +231,17 @@ const ProductList: React.FC<ProductListProps> = ({ t, currentLang }) => {
 
             {filteredProducts.length === 0 && (
                <div className="text-center text-gray-500 mt-12 bg-white p-8 rounded-xl border border-dashed border-gray-300">
-                 ไม่พบสินค้าที่คุณค้นหา
+                 {ui.noResults}
                </div>
             )}
 
             {filteredProducts.length > visibleCount && (
               <div className="text-center mt-12">
                 <button 
-                  onClick={() => setVisibleCount(prev => prev + 12)}
+                  onClick={() => setVisibleCount(prev => prev + pageSize)}
                   className="inline-flex items-center px-8 py-3 bg-white border border-brand-orange text-brand-orange font-bold rounded-full hover:bg-brand-orange hover:text-white transition shadow-sm"
                 >
-                  แสดงสินค้าเพิ่มเติม <ChevronDown size={20} className="ml-2" />
+                  {ui.showMore} <ChevronDown size={20} className="ml-2" />
                 </button>
               </div>
             )}

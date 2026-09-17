@@ -20,9 +20,11 @@ const FALLBACK_POSTER = '/videos/hero-1-poster.jpg';
 interface HeroProps {
   t: Translation['hero'];
   scrollToSection: (id: string) => void;
+  /** คำหลักที่อยู่ใน h1 (เช่น "ผงปรุงรส ตราโดนัท") */
+  eyebrow?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ t, scrollToSection }) => {
+const Hero: React.FC<HeroProps> = ({ t, scrollToSection, eyebrow }) => {
   const [remoteSlides, setRemoteSlides] = useState<HeroSlide[]>([]);
   const [brokenUrls, setBrokenUrls] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -140,6 +142,9 @@ const Hero: React.FC<HeroProps> = ({ t, scrollToSection }) => {
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg font-display">
+          {eyebrow && (
+            <span className="block text-lg md:text-2xl font-semibold text-brand-yellow mb-3 tracking-wide">{eyebrow}</span>
+          )}
           {t.title}
         </h1>
         <p className="text-xl md:text-2xl text-brand-cream mb-8 max-w-2xl drop-shadow-md">

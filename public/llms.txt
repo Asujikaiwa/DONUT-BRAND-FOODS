@@ -64,6 +64,15 @@
 
 - กรดมะนาว (Citric Acid) (Citric Acid) — ขนาด 500g / 1000g
 
+## หน้าเว็บหลัก (มี 3 ภาษา: ไทย / English / 中文)
+
+- หน้าแรก: https://athip-panich.com/ | https://athip-panich.com/en/ | https://athip-panich.com/zh/
+- ผงปรุงรส (ผงเขย่า): https://athip-panich.com/seasoning-powder/ | https://athip-panich.com/en/seasoning-powder/ | https://athip-panich.com/zh/seasoning-powder/
+- เครื่องดื่มชนิดผง: https://athip-panich.com/beverage-powder/ | https://athip-panich.com/en/beverage-powder/ | https://athip-panich.com/zh/beverage-powder/
+- วัตถุเจือปนอาหาร: https://athip-panich.com/food-additives/ | https://athip-panich.com/en/food-additives/ | https://athip-panich.com/zh/food-additives/
+- คำถามที่พบบ่อย: https://athip-panich.com/faq/ | https://athip-panich.com/en/faq/ | https://athip-panich.com/zh/faq/
+- หน้าสินค้าแต่ละรายการ: https://athip-panich.com/product/<ชื่อสินค้าภาษาอังกฤษ>/ เช่น https://athip-panich.com/product/cheese-seasoning/ (รายการครบอยู่ใน https://athip-panich.com/sitemap.xml)
+
 ## ช่องทางติดตาม / ช่องทางขาย
 
 - Facebook: https://www.facebook.com/athip.panich.donut/

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Language, Translation } from '../types';
 import { Menu, X, Facebook, Instagram, Mail, Globe, Phone } from 'lucide-react';
+import { LANGS, LANG_INFO, Route, routePath, homePath, faqPath } from '../routes';
 
 interface NavbarProps {
   currentLang: Language;
-  setLang: (lang: Language) => void;
+  /** หน้าปัจจุบัน — ใช้สร้างลิงก์เปลี่ยนภาษาไปหน้าเดียวกันในภาษาอื่น */
+  route: Route;
   t: Translation['nav'];
+  faqLabel: string;
   scrollToSection: (id: string) => void;
 }
 
@@ -23,7 +26,7 @@ const LineIcon = ({ size = 20 }) => (
   </svg>
 );
 
-const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSection }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentLang, route, t, faqLabel, scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -33,11 +36,17 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const home = homePath(currentLang);
+  const isHome = route.type === 'home';
+  // href จริงให้ Google ตามลิงก์ได้ / id ใช้เลื่อนหน้าแบบนุ่มนวลเมื่ออยู่หน้าแรก
   const navLinks = [
-    { id: 'home', label: t.home },
-    { id: 'products', label: t.products },
-    { id: 'contact', label: t.contact },
+    { id: 'home', label: t.home, href: home },
+    { id: 'products', label: t.products, href: `${home}#products` },
+    { id: 'faq', label: faqLabel, href: faqPath(currentLang) },
+    { id: 'contact', label: t.contact, href: '#contact' },
   ];
+  // ลิงก์เปลี่ยนภาษา: ไปหน้าเดียวกันในภาษาอื่น (หน้า 404 -> หน้าแรกของภาษานั้น)
+  const langHref = (lang: Language) => routePath(route.type === 'notfound' ? { type: 'home', lang: route.lang } : route, lang);
 
   const socialLinks = [
     { name: 'Facebook', icon: <Facebook size={18} />, url: "https://www.facebook.com/athip.panich.donut/?locale=th_TH", hoverColor: "hover:text-blue-600 hover:bg-blue-50" },
@@ -47,9 +56,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
     { name: 'Email', icon: <Mail size={18} />, url: "mailto:athip_panich@hotmail.com", hoverColor: "hover:text-red-500 hover:bg-red-50" }
   ];
 
-  const handleNavClick = (id: string) => {
-    scrollToSection(id);
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
     setIsOpen(false);
+    if (id === 'faq') return; // ไปหน้า /faq/ ตามลิงก์ปกติ
+    if (id === 'contact' || isHome) {
+      e.preventDefault();
+      scrollToSection(id);
+    }
   };
 
   return (
@@ -60,20 +73,20 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
         <div className="flex justify-between items-center">
           
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={() => handleNavClick('home')}>
+          <a href={home} className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={(e) => handleNavClick(e, 'home')}>
             <img src="/PictureProduct/Other/Logo/logo.jpg" alt="Donut Brand Logo" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover border-2 border-brand-orange/20" />
             <span className="text-xl sm:text-2xl font-bold font-display text-brand-orange whitespace-nowrap">
               DONUT <span className="text-brand-dark">BRAND</span>
             </span>
-          </div>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div className="flex space-x-4 lg:space-x-6">
               {navLinks.map((link) => (
-                <button key={link.id} onClick={() => handleNavClick(link.id)} className="text-gray-700 hover:text-brand-orange font-medium transition whitespace-nowrap">
+                <a key={link.id} href={link.href} onClick={(e) => handleNavClick(e, link.id)} className="text-gray-700 hover:text-brand-orange font-medium transition whitespace-nowrap">
                   {link.label}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -108,10 +121,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               <div className="flex items-center space-x-2 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
                 <Globe size={16} className="text-brand-orange" />
                 <div className="flex space-x-1 text-sm font-medium">
-                  {(['th', 'en', 'cn'] as Language[]).map((lang) => (
-                    <button key={lang} onClick={() => setLang(lang)} className={`px-2 py-0.5 rounded transition ${currentLang === lang ? 'bg-brand-orange text-white shadow-sm' : 'text-gray-500 hover:text-brand-dark hover:bg-gray-200'}`}>
-                      {lang.toUpperCase()}
-                    </button>
+                  {LANGS.map((lang) => (
+                    <a key={lang} href={langHref(lang)} hrefLang={LANG_INFO[lang].hreflang} aria-current={currentLang === lang ? 'true' : undefined} className={`px-2 py-0.5 rounded transition ${currentLang === lang ? 'bg-brand-orange text-white shadow-sm' : 'text-gray-500 hover:text-brand-dark hover:bg-gray-200'}`}>
+                      {LANG_INFO[lang].label}
+                    </a>
                   ))}
                 </div>
               </div>
@@ -132,9 +145,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex flex-col space-y-4">
           <div className="space-y-1">
             {navLinks.map((link) => (
-              <button key={link.id} onClick={() => handleNavClick(link.id)} className="text-left w-full text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 px-3 py-2 rounded-lg transition">
+              <a key={link.id} href={link.href} onClick={(e) => handleNavClick(e, link.id)} className="block text-left w-full text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 px-3 py-2 rounded-lg transition">
                 {link.label}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -165,10 +178,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang, t, scrollToSectio
               <div className="flex items-center space-x-2">
                 <Globe size={18} className="text-gray-500" />
                 <div className="flex gap-2 w-full">
-                  {(['th', 'en', 'cn'] as Language[]).map((lang) => (
-                    <button key={lang} onClick={() => { setLang(lang); setIsOpen(false); }} className={`flex-1 py-1.5 rounded-md text-sm font-medium border transition ${currentLang === lang ? 'bg-brand-orange text-white border-brand-orange shadow-sm' : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50'}`}>
-                      {lang.toUpperCase()}
-                    </button>
+                  {LANGS.map((lang) => (
+                    <a key={lang} href={langHref(lang)} hrefLang={LANG_INFO[lang].hreflang} className={`flex-1 text-center py-1.5 rounded-md text-sm font-medium border transition ${currentLang === lang ? 'bg-brand-orange text-white border-brand-orange shadow-sm' : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50'}`}>
+                      {LANG_INFO[lang].label}
+                    </a>
                   ))}
                 </div>
               </div>

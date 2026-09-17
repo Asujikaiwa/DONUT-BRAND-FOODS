@@ -1,0 +1,454 @@
+{
+  "source": "Firestore (อัปเดตอัตโนมัติทุกครั้งที่ build สำเร็จ)",
+  "updatedAt": "2026-09-17T17:35:27.390Z",
+  "products": [
+    {
+      "id": "xD81XvfDrf0xSDkTvJ9Q",
+      "category": "additives",
+      "name": {
+        "cn": "柠檬酸",
+        "en": "Citric Acid",
+        "th": "กรดมะนาว (Citric Acid)"
+      },
+      "weight": "500g / 1000g",
+      "price": 100,
+      "variants": [
+        {
+          "weight": "500 G",
+          "price": 0
+        },
+        {
+          "weight": "1000 G",
+          "price": 0
+        }
+      ],
+      "isBestSeller": false,
+      "isNew": false,
+      "isHidden": false,
+      "image": "/PictureProduct/Other/CitricAcid1000G.jpeg"
+    },
+    {
+      "id": "0A47nhjOi1Ny6KpAwo04",
+      "category": "beverage",
+      "name": {
+        "cn": "泰式茶粉",
+        "en": "Thai Tea Powder",
+        "th": "ผงชาไทย"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/ThaiTea200G.jpeg"
+    },
+    {
+      "id": "1jN9br1lnYel5jS1pVkY",
+      "category": "beverage",
+      "name": {
+        "cn": "粉红奶粉",
+        "en": "Pink Milk (Nom Yen)",
+        "th": "ผงนมเย็น"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/Nomyen200G.png"
+    },
+    {
+      "id": "2RmSOpWMFnZdoBQTymG4",
+      "category": "beverage",
+      "name": {
+        "en": "Taro Powder",
+        "cn": "香芋粉",
+        "th": "ผงเผือกหอม"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/TaroBubble200G.jpeg"
+    },
+    {
+      "id": "9gkzHiDl2cB8C5RV0Uy3",
+      "category": "beverage",
+      "name": {
+        "th": "ผงช็อกโกแลต",
+        "cn": "巧克力粉",
+        "en": "Chocolate Powder"
+      },
+      "weight": "200g",
+      "price": 0,
+      "variants": [
+        {
+          "weight": "200g",
+          "price": 0
+        }
+      ],
+      "isBestSeller": true,
+      "isNew": false,
+      "isHidden": false,
+      "image": "/PictureProduct/WaterPowder/Chocolate200G.jpeg"
+    },
+    {
+      "id": "D3i1sxUWr7cHzMvTm7zl",
+      "category": "beverage",
+      "name": {
+        "th": "นมผง",
+        "cn": "奶粉",
+        "en": "Milk Powder"
+      },
+      "weight": "200g / 1000g",
+      "price": 0,
+      "variants": [
+        {
+          "weight": "200 G",
+          "price": 0
+        },
+        {
+          "weight": "1000 G",
+          "price": 0
+        }
+      ],
+      "isBestSeller": false,
+      "isNew": false,
+      "isHidden": false,
+      "image": "/PictureProduct/WaterPowder/Milk1000G.jpeg"
+    },
+    {
+      "id": "Jou5tvxeTVpgYO5SABpc",
+      "category": "beverage",
+      "name": {
+        "en": "Matcha Green Tea",
+        "cn": "抹茶粉",
+        "th": "ผงชาเขียวมัทฉะ"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/MatchaBubbleTea200G.jpeg"
+    },
+    {
+      "id": "NB2uhqKj95E02xKVgEt8",
+      "category": "beverage",
+      "name": {
+        "en": "Cantaloupe Powder",
+        "cn": "哈密瓜粉",
+        "th": "ผงแคนตาลูป"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/Cantaloupe200G.jpeg"
+    },
+    {
+      "id": "a5hMbtuKu85SuFylIMTq",
+      "category": "beverage",
+      "name": {
+        "th": "ผงชานมไข่มุก",
+        "en": "Bubble Tea Powder",
+        "cn": "珍珠奶茶粉"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/BubbleTea200G.jpeg"
+    },
+    {
+      "id": "frhjvT6uLphJzUGh9lPF",
+      "category": "beverage",
+      "name": {
+        "th": "ผงมะพร้าว",
+        "cn": "椰子粉",
+        "en": "Coconut Powder"
+      },
+      "weight": "200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/Coconut200G.jpeg"
+    },
+    {
+      "id": "yH7NqcAeuSGyYbHicoE9",
+      "category": "beverage",
+      "name": {
+        "th": "ผงโกโก้",
+        "cn": "可可粉",
+        "en": "Cocoa Powder"
+      },
+      "weight": "120g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/WaterPowder/Cocoa120G.jpeg"
+    },
+    {
+      "id": "1AVvpcLcn1CSjl146Cb8",
+      "category": "seasoning",
+      "name": {
+        "cn": "芝士调料 (S)",
+        "en": "Cheese Seasoning (S)",
+        "th": "ผงปรุงรสชีส (สูตร S)"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/CheeseS500G.jpeg"
+    },
+    {
+      "id": "2Fm7xfyDfiiSfLZC0NJ7",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสปลาหมึกย่าง",
+        "cn": "烤鱿鱼调料",
+        "en": "Grilled Squid Seasoning"
+      },
+      "weight": "200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/GrilledSquid500G.jpeg"
+    },
+    {
+      "id": "2GDx73XxmhSTZo7BtZI2",
+      "category": "seasoning",
+      "name": {
+        "en": "Seaweed Seasoning",
+        "cn": "海苔调料",
+        "th": "ผงปรุงรสสาหร่าย"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Seaweed500G.jpeg"
+    },
+    {
+      "id": "42BhxpsjUNADERuKrh6m",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสบาร์บีคิว",
+        "cn": "烧烤调料",
+        "en": "BBQ Seasoning"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/BBQ500G.jpeg"
+    },
+    {
+      "id": "Ga2KneEzRTyk81jGm7LK",
+      "category": "seasoning",
+      "name": {
+        "cn": "香辣海鲜调料",
+        "en": "Spicy Seafood Seasoning",
+        "th": "ผงซีฟู้ดสไปซี่"
+      },
+      "weight": "50g / 100g / 200g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/SpicySeafood200G.jpeg"
+    },
+    {
+      "id": "JMakC2zTk8oi7grHD7cx",
+      "category": "seasoning",
+      "name": {
+        "en": "Corn Seasoning",
+        "cn": "玉米调料",
+        "th": "ผงปรุงรสข้าวโพด"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Corn500G.jpeg"
+    },
+    {
+      "id": "LTufop0DvaY5pnCmBa66",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสวิงซ์แซ่บ",
+        "cn": "香辣鸡翅调料",
+        "en": "Wing Zab Seasoning"
+      },
+      "weight": "200g / 500g",
+      "price": 0,
+      "isNew": true,
+      "image": "/PictureProduct/FoodPowder/WingZab500G.jpeg"
+    },
+    {
+      "id": "MAtrbtQgROOpJL5VQxAH",
+      "category": "seasoning",
+      "name": {
+        "cn": "辣椒芝士调料",
+        "en": "Chilli Cheese Seasoning",
+        "th": "ผงปรุงรสพริกชีส"
+      },
+      "weight": "200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/ChilliCheese500G.jpeg"
+    },
+    {
+      "id": "MXCjjwgcDYz3e3FebHSH",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงซาวครีมและหัวหอม",
+        "cn": "酸奶油洋葱",
+        "en": "Sour Cream & Onion"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/SourCreamAndOnion500G.jpeg"
+    },
+    {
+      "id": "N7wwvYsiRqW0rY0LyAy3",
+      "category": "seasoning",
+      "name": {
+        "en": "Mhala Seasoning",
+        "cn": "麻辣调料",
+        "th": "ผงปรุงรสหม่าล่า"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Mhala500G.jpeg"
+    },
+    {
+      "id": "RiBRk80apLhfRZ2QokZu",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสลาบ",
+        "cn": "泰式凉拌调料",
+        "en": "Larb Seasoning"
+      },
+      "weight": "100g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Larb500G.jpeg"
+    },
+    {
+      "id": "S79Cvnhnw5nmYdInNG6p",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสชีส",
+        "cn": "芝士调料",
+        "en": "Cheese Seasoning"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Cheese500G.jpeg"
+    },
+    {
+      "id": "UcZN5jrc2CfZ14uMITTC",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสแซ่บซี๊ด",
+        "en": "Zab Zeed Seasoning",
+        "cn": "极辣调料"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/ZabZeed500G.jpeg"
+    },
+    {
+      "id": "WnvOZLR1i4BBSuFn3jnN",
+      "category": "seasoning",
+      "name": {
+        "cn": "香辣调料",
+        "en": "Hot & Spicy Seasoning",
+        "th": "ผงฮอทแอนด์สไปซี่"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Hot&spicy500G.jpeg"
+    },
+    {
+      "id": "WzVp1kk1mCQeisqUkmLO",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสปาปริก้า",
+        "cn": "红椒调料",
+        "en": "Paprika Seasoning"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Paprika500G.jpeg"
+    },
+    {
+      "id": "jiTg4aRt9noBoZBEPhMw",
+      "category": "seasoning",
+      "name": {
+        "cn": "冬阴功调料",
+        "en": "Tom Yum Seasoning",
+        "th": "ผงปรุงรสต้มยำ"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/TomYum500G.jpeg"
+    },
+    {
+      "id": "nyvlyJKhYgwUBYJEyvz7",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสไข่เค็ม",
+        "cn": "咸蛋黄调料",
+        "en": "Salted Egg Seasoning"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/SaltedEgg500G.jpeg"
+    },
+    {
+      "id": "q8rkxiK0QIb1Da7MpMeV",
+      "category": "seasoning",
+      "name": {
+        "en": "Grilled Shrimp Seasoning",
+        "cn": "烤虾调料",
+        "th": "ผงปรุงรสกุ้งย่าง"
+      },
+      "weight": "200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/GrillShrimp500G.jpeg"
+    },
+    {
+      "id": "v4HY57EesPKLvi7PActo",
+      "category": "seasoning",
+      "name": {
+        "en": "Meaty Cheese Seasoning",
+        "cn": "肉香芝士调料",
+        "th": "ผงปรุงรสมีตตี้ชีส"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/MeatyCheese500G.jpeg"
+    },
+    {
+      "id": "yxDqpb1u8anjRVG8B0wL",
+      "category": "seasoning",
+      "name": {
+        "en": "Pizza Seasoning",
+        "cn": "披萨调料",
+        "th": "ผงปรุงรสพิซซ่า"
+      },
+      "weight": "100g / 200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/Pizza500G.jpeg"
+    },
+    {
+      "id": "znF7ZxobuXhPS4UA3tdc",
+      "category": "seasoning",
+      "name": {
+        "th": "ผงปรุงรสชีสนม",
+        "cn": "牛奶芝士调料",
+        "en": "Milk Cheese Seasoning"
+      },
+      "weight": "200g / 500g",
+      "price": 0,
+      "isNew": false,
+      "image": "/PictureProduct/FoodPowder/MilkCheese500G.jpeg"
+    }
+  ]
+}
