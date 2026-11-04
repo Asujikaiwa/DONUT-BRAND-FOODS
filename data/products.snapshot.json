@@ -1,14 +1,14 @@
 {
   "source": "Firestore (อัปเดตอัตโนมัติทุกครั้งที่ build สำเร็จ)",
-  "updatedAt": "2026-09-17T17:35:27.390Z",
+  "updatedAt": "2026-09-17T18:15:20.871Z",
   "products": [
     {
       "id": "xD81XvfDrf0xSDkTvJ9Q",
       "category": "additives",
       "name": {
         "cn": "柠檬酸",
-        "en": "Citric Acid",
-        "th": "กรดมะนาว (Citric Acid)"
+        "th": "กรดมะนาว (Citric Acid)",
+        "en": "Citric Acid"
       },
       "weight": "500g / 1000g",
       "price": 100,
@@ -32,8 +32,8 @@
       "category": "beverage",
       "name": {
         "cn": "泰式茶粉",
-        "en": "Thai Tea Powder",
-        "th": "ผงชาไทย"
+        "th": "ผงชาไทย",
+        "en": "Thai Tea Powder"
       },
       "weight": "200g",
       "price": 0,
@@ -45,8 +45,8 @@
       "category": "beverage",
       "name": {
         "cn": "粉红奶粉",
-        "en": "Pink Milk (Nom Yen)",
-        "th": "ผงนมเย็น"
+        "th": "ผงนมเย็น",
+        "en": "Pink Milk (Nom Yen)"
       },
       "weight": "200g",
       "price": 0,
@@ -57,8 +57,8 @@
       "id": "2RmSOpWMFnZdoBQTymG4",
       "category": "beverage",
       "name": {
-        "en": "Taro Powder",
         "cn": "香芋粉",
+        "en": "Taro Powder",
         "th": "ผงเผือกหอม"
       },
       "weight": "200g",
@@ -70,9 +70,9 @@
       "id": "9gkzHiDl2cB8C5RV0Uy3",
       "category": "beverage",
       "name": {
-        "th": "ผงช็อกโกแลต",
         "cn": "巧克力粉",
-        "en": "Chocolate Powder"
+        "en": "Chocolate Powder",
+        "th": "ผงช็อกโกแลต"
       },
       "weight": "200g",
       "price": 0,
@@ -91,8 +91,8 @@
       "id": "D3i1sxUWr7cHzMvTm7zl",
       "category": "beverage",
       "name": {
-        "th": "นมผง",
         "cn": "奶粉",
+        "th": "นมผง",
         "en": "Milk Powder"
       },
       "weight": "200g / 1000g",
@@ -116,9 +116,9 @@
       "id": "Jou5tvxeTVpgYO5SABpc",
       "category": "beverage",
       "name": {
-        "en": "Matcha Green Tea",
         "cn": "抹茶粉",
-        "th": "ผงชาเขียวมัทฉะ"
+        "th": "ผงชาเขียวมัทฉะ",
+        "en": "Matcha Green Tea"
       },
       "weight": "200g",
       "price": 0,
@@ -129,9 +129,9 @@
       "id": "NB2uhqKj95E02xKVgEt8",
       "category": "beverage",
       "name": {
+        "th": "ผงแคนตาลูป",
         "en": "Cantaloupe Powder",
-        "cn": "哈密瓜粉",
-        "th": "ผงแคนตาลูป"
+        "cn": "哈密瓜粉"
       },
       "weight": "200g",
       "price": 0,
@@ -142,9 +142,9 @@
       "id": "a5hMbtuKu85SuFylIMTq",
       "category": "beverage",
       "name": {
-        "th": "ผงชานมไข่มุก",
+        "cn": "珍珠奶茶粉",
         "en": "Bubble Tea Powder",
-        "cn": "珍珠奶茶粉"
+        "th": "ผงชานมไข่มุก"
       },
       "weight": "200g",
       "price": 0,
@@ -155,8 +155,8 @@
       "id": "frhjvT6uLphJzUGh9lPF",
       "category": "beverage",
       "name": {
-        "th": "ผงมะพร้าว",
         "cn": "椰子粉",
+        "th": "ผงมะพร้าว",
         "en": "Coconut Powder"
       },
       "weight": "200g",
@@ -168,9 +168,9 @@
       "id": "yH7NqcAeuSGyYbHicoE9",
       "category": "beverage",
       "name": {
+        "en": "Cocoa Powder",
         "th": "ผงโกโก้",
-        "cn": "可可粉",
-        "en": "Cocoa Powder"
+        "cn": "可可粉"
       },
       "weight": "120g",
       "price": 0,
@@ -181,9 +181,9 @@
       "id": "1AVvpcLcn1CSjl146Cb8",
       "category": "seasoning",
       "name": {
-        "cn": "芝士调料 (S)",
+        "th": "ผงปรุงรสชีส (สูตร S)",
         "en": "Cheese Seasoning (S)",
-        "th": "ผงปรุงรสชีส (สูตร S)"
+        "cn": "芝士调料 (S)"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -195,8 +195,8 @@
       "category": "seasoning",
       "name": {
         "th": "ผงปรุงรสปลาหมึกย่าง",
-        "cn": "烤鱿鱼调料",
-        "en": "Grilled Squid Seasoning"
+        "en": "Grilled Squid Seasoning",
+        "cn": "烤鱿鱼调料"
       },
       "weight": "200g / 500g",
       "price": 0,
@@ -207,9 +207,9 @@
       "id": "2GDx73XxmhSTZo7BtZI2",
       "category": "seasoning",
       "name": {
+        "th": "ผงปรุงรสสาหร่าย",
         "en": "Seaweed Seasoning",
-        "cn": "海苔调料",
-        "th": "ผงปรุงรสสาหร่าย"
+        "cn": "海苔调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -220,9 +220,9 @@
       "id": "42BhxpsjUNADERuKrh6m",
       "category": "seasoning",
       "name": {
+        "en": "BBQ Seasoning",
         "th": "ผงปรุงรสบาร์บีคิว",
-        "cn": "烧烤调料",
-        "en": "BBQ Seasoning"
+        "cn": "烧烤调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -233,9 +233,9 @@
       "id": "Ga2KneEzRTyk81jGm7LK",
       "category": "seasoning",
       "name": {
-        "cn": "香辣海鲜调料",
+        "th": "ผงซีฟู้ดสไปซี่",
         "en": "Spicy Seafood Seasoning",
-        "th": "ผงซีฟู้ดสไปซี่"
+        "cn": "香辣海鲜调料"
       },
       "weight": "50g / 100g / 200g",
       "price": 0,
@@ -246,9 +246,9 @@
       "id": "JMakC2zTk8oi7grHD7cx",
       "category": "seasoning",
       "name": {
-        "en": "Corn Seasoning",
         "cn": "玉米调料",
-        "th": "ผงปรุงรสข้าวโพด"
+        "th": "ผงปรุงรสข้าวโพด",
+        "en": "Corn Seasoning"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -259,9 +259,9 @@
       "id": "LTufop0DvaY5pnCmBa66",
       "category": "seasoning",
       "name": {
-        "th": "ผงปรุงรสวิงซ์แซ่บ",
         "cn": "香辣鸡翅调料",
-        "en": "Wing Zab Seasoning"
+        "en": "Wing Zab Seasoning",
+        "th": "ผงปรุงรสวิงซ์แซ่บ"
       },
       "weight": "200g / 500g",
       "price": 0,
@@ -285,9 +285,9 @@
       "id": "MXCjjwgcDYz3e3FebHSH",
       "category": "seasoning",
       "name": {
+        "en": "Sour Cream & Onion",
         "th": "ผงซาวครีมและหัวหอม",
-        "cn": "酸奶油洋葱",
-        "en": "Sour Cream & Onion"
+        "cn": "酸奶油洋葱"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -298,9 +298,9 @@
       "id": "N7wwvYsiRqW0rY0LyAy3",
       "category": "seasoning",
       "name": {
+        "th": "ผงปรุงรสหม่าล่า",
         "en": "Mhala Seasoning",
-        "cn": "麻辣调料",
-        "th": "ผงปรุงรสหม่าล่า"
+        "cn": "麻辣调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -311,9 +311,9 @@
       "id": "RiBRk80apLhfRZ2QokZu",
       "category": "seasoning",
       "name": {
+        "en": "Larb Seasoning",
         "th": "ผงปรุงรสลาบ",
-        "cn": "泰式凉拌调料",
-        "en": "Larb Seasoning"
+        "cn": "泰式凉拌调料"
       },
       "weight": "100g / 500g",
       "price": 0,
@@ -324,9 +324,9 @@
       "id": "S79Cvnhnw5nmYdInNG6p",
       "category": "seasoning",
       "name": {
-        "th": "ผงปรุงรสชีส",
         "cn": "芝士调料",
-        "en": "Cheese Seasoning"
+        "en": "Cheese Seasoning",
+        "th": "ผงปรุงรสชีส"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -337,9 +337,9 @@
       "id": "UcZN5jrc2CfZ14uMITTC",
       "category": "seasoning",
       "name": {
+        "cn": "极辣调料",
         "th": "ผงปรุงรสแซ่บซี๊ด",
-        "en": "Zab Zeed Seasoning",
-        "cn": "极辣调料"
+        "en": "Zab Zeed Seasoning"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -363,9 +363,9 @@
       "id": "WzVp1kk1mCQeisqUkmLO",
       "category": "seasoning",
       "name": {
+        "en": "Paprika Seasoning",
         "th": "ผงปรุงรสปาปริก้า",
-        "cn": "红椒调料",
-        "en": "Paprika Seasoning"
+        "cn": "红椒调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -389,9 +389,9 @@
       "id": "nyvlyJKhYgwUBYJEyvz7",
       "category": "seasoning",
       "name": {
+        "en": "Salted Egg Seasoning",
         "th": "ผงปรุงรสไข่เค็ม",
-        "cn": "咸蛋黄调料",
-        "en": "Salted Egg Seasoning"
+        "cn": "咸蛋黄调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -402,9 +402,9 @@
       "id": "q8rkxiK0QIb1Da7MpMeV",
       "category": "seasoning",
       "name": {
+        "th": "ผงปรุงรสกุ้งย่าง",
         "en": "Grilled Shrimp Seasoning",
-        "cn": "烤虾调料",
-        "th": "ผงปรุงรสกุ้งย่าง"
+        "cn": "烤虾调料"
       },
       "weight": "200g / 500g",
       "price": 0,
@@ -415,8 +415,8 @@
       "id": "v4HY57EesPKLvi7PActo",
       "category": "seasoning",
       "name": {
-        "en": "Meaty Cheese Seasoning",
         "cn": "肉香芝士调料",
+        "en": "Meaty Cheese Seasoning",
         "th": "ผงปรุงรสมีตตี้ชีส"
       },
       "weight": "100g / 200g / 500g",
@@ -429,8 +429,8 @@
       "category": "seasoning",
       "name": {
         "en": "Pizza Seasoning",
-        "cn": "披萨调料",
-        "th": "ผงปรุงรสพิซซ่า"
+        "th": "ผงปรุงรสพิซซ่า",
+        "cn": "披萨调料"
       },
       "weight": "100g / 200g / 500g",
       "price": 0,
@@ -441,9 +441,9 @@
       "id": "znF7ZxobuXhPS4UA3tdc",
       "category": "seasoning",
       "name": {
-        "th": "ผงปรุงรสชีสนม",
         "cn": "牛奶芝士调料",
-        "en": "Milk Cheese Seasoning"
+        "en": "Milk Cheese Seasoning",
+        "th": "ผงปรุงรสชีสนม"
       },
       "weight": "200g / 500g",
       "price": 0,
